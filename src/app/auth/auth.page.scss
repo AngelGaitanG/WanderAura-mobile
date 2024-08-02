@@ -1,0 +1,58 @@
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    ion-content {
+        --background: none;
+        background-image: url('../../assets/backgrounds/flowers.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100%;
+
+        .auth-container {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .app-title {
+                font-size: 36px;
+                font-weight: 600;
+                margin-bottom: 24px;
+                text-shadow: 0 0 10px black;
+            }
+
+            ion-button {
+                display: block;
+                margin-top: 24px;
+                --background: linear-gradient(165deg, #f76e4fc8, #263256c8);
+                --color: white;
+                font-size: 14px;
+                --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+                --border-radius: 10px;
+                font-weight: bold;
+                font-style: normal;
+                --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.7);
+            }
+
+        }
+
+        .terms {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            a {
+                font-size: larger;
+                color: white;
+                text-shadow: black 0 0 5px;
+            }
+        }
+
+
+    }
+}
