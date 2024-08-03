@@ -4,6 +4,7 @@
     <ion-button (click)="login()">Iniciar Sesion</ion-button>
     <ion-button (click)="register()">Registrarse</ion-button>
   </div>
+  <app-login *ngIf="buttonActivated === 'Login'"></app-login>
   <div class="terms">
     <a href="#">Terminos y Condiciones</a>
   </div>
