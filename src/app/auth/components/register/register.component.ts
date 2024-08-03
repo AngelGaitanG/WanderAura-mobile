@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
+  standalone: true
 })
-export class RegisterComponent  implements OnInit {
+export class RegisterComponent {
 
   constructor() { }
 
-  ngOnInit() {}
 
 }
