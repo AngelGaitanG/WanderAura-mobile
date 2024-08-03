@@ -18,6 +18,18 @@ export const TABS_ROUTES: Routes = [
         loadComponent: () => import('./activities/activities.page').then((m) => m.ActivitiesPage),
     },
     {
+        path: 'settings',
+        loadComponent: () => import('./settings/settings.page').then((m) => m.SettingsPage),
+    },
+    {
+        path: 'weather',
+        loadComponent: () => import('./weather/weather.page').then((m) => m.WeatherPage),
+    },
+    {
+        path: 'help',
+        loadComponent: () => import('./help/help.page').then((m) => m.HelpPage),
+    },
+    {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
