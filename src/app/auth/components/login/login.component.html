@@ -1,5 +1,6 @@
 <h2>WanderAura</h2>
 <div class="login-container">
+  <button (click)="goBackToParent()" class="back-button"><i class="fa-solid fa-arrow-left"></i></button>
   <h2>Login</h2>
   <div class="login-form">
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">

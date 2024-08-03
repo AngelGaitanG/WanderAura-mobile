@@ -18,7 +18,7 @@ export class AuthPage {
   buttonActivated: string;
 
   constructor() {
-    this.buttonActivated = ButtonActivated.Register;
+    this.buttonActivated = ButtonActivated.None;
   }
 
   login() {
@@ -28,6 +28,10 @@ export class AuthPage {
 
   register(){
     this.buttonActivated = ButtonActivated.Register;
+  }
+
+  goBackFromChild(event: Event):void {
+    this.buttonActivated = ButtonActivated.None;
   }
 
 }

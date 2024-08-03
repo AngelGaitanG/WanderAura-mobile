@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { IonInput, IonLabel, IonButton } from '@ionic/angular/standalone';
 import { IRegisterForm } from './interfaces/register.interface';
@@ -12,6 +12,11 @@ import { IRegisterForm } from './interfaces/register.interface';
   imports: [IonInput, IonLabel, IonButton, CommonModule, FormsModule],
 })
 export class RegisterComponent {
+@Output() goBack = new EventEmitter<Event>();
+
+  goBackToParent():void {
+    this.goBack.emit();
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
