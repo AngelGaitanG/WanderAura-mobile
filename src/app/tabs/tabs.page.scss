@@ -33,6 +33,10 @@ ion-menu {
                         color: rgba(0, 0, 0, .7);
                     }
                 }
+
+                ion-item:hover {
+                    --background: rgba(0, 0, 0, .1);
+                }
             }
         }
     }
