@@ -1,11 +1,44 @@
 <h2>WanderAura</h2>
-<div class="register-container">
+<div class="login-container">
   <h2>Register</h2>
-  <form action="">
-    <div class="input-container">
-      <ion-input fill="outline" shape="round" label="Email" label-placement="floating" type="email"
-        name="email"></ion-input>
-
-    </div>
-  </form>
+  <div class="login-form">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="input-container">
+        <ion-input fill="outline" shape="round" label="Name" label-placement="floating" type="text" name="name" ngModel
+          required #name="ngModel" class="white-input"></ion-input>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+          <small *ngIf="name.errors?.['required']">Name is required.</small>
+        </div>
+      </div>
+      <div class="input-container">
+        <ion-input fill="outline" shape="round" label="Email" label-placement="floating" type="email" name="email"
+          ngModel required email #email="ngModel" class="white-input"></ion-input>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Please enter a valid email.</small>
+        </div>
+      </div>
+      <div class="input-container">
+        <ion-input fill="outline" shape="round" label="Password" label-placement="floating" type="password"
+          name="password" ngModel required minlength="6" #password="ngModel" class="white-input"
+          style="margin-top: 20px;"></ion-input>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+          <small *ngIf="password.errors?.['required']">Password is required.</small>
+        </div>
+      </div>
+      <div class="input-container">
+        <ion-input fill="outline" shape="round" label="Confirm Password" label-placement="floating" type="password"
+          name="confirmPassword" ngModel required minlength="6" #confirmPassword="ngModel" class="white-input"
+          style="margin-top: 20px;"></ion-input>
+        <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+          class="error-message">
+          <small *ngIf="confirmPassword.errors?.['required']">Password is required.</small>
+        </div>
+        <div *ngIf="confirmPassword.value !== password.value" class="error-message">
+          <small>Passwords do not match</small>
+        </div>
+      </div>
+      <ion-button type="submit" [disabled]="loginForm.invalid">Login</ion-button>
+    </form>
+  </div>
 </div>

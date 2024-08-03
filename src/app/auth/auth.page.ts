@@ -18,7 +18,7 @@ export class AuthPage {
   buttonActivated: string;
 
   constructor() {
-    this.buttonActivated = ButtonActivated.Login;
+    this.buttonActivated = ButtonActivated.Register;
   }
 
   login() {
