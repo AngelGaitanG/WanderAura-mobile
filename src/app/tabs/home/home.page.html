@@ -1,14 +1,20 @@
 <ion-content [fullscreen]="true">
 
-    <h3>Home</h3>
-    <div class="card-container">
-        <ion-card *ngFor="let card of cards">
-            <img alt="Silhouette of mountains" [src]="card.img" />
-            <ion-card-header>
-                <ion-card-title>{{card.title}}</ion-card-title>
-                <ion-card-subtitle>{{card.subtitle}}</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>{{card.content}}</ion-card-content>
-        </ion-card>
+    <div class="head">
+        <h3>
+            Welcome
+        </h3>
+        <ion-button class="getStartedBtn">Get Started</ion-button>
     </div>
+    <p class="description">
+        Wander Aura is an app for your trip planning. You can choose the best destinations for your trip. You can choose
+        the best activities for your trip. Thank you.
+    </p>
+    <div class="card-container">
+        <div *ngFor="let card of cards" class="card">
+            <img alt="Silhouette of mountains" [src]="card.img" />
+            <h3 class="title">{{card.title}}</h3>
+        </div>
+    </div>
+
 </ion-content>
