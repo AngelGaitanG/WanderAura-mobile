@@ -1,0 +1,13 @@
+<div class="carousel-container">
+  <div *ngFor="let item of items; let i = index" class="carousel-item" [class.active]="i === currentIndex"
+    [class.prev]="i === previousIndex && currentIndex < previousIndex"
+    [class.next]="i === previousIndex && currentIndex > previousIndex">
+    <img [src]="item.image" alt="Image">
+    <div class="carousel-description">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+  <ion-button class="carousel-control prev" (click)="prev()">‹</ion-button>
+  <ion-button class="carousel-control next" (click)="next()">›</ion-button>
+</div>
