@@ -12,6 +12,7 @@ ion-menu {
     --width: 250px;
 
     ion-header {
+
         ion-toolbar {
             --background: linear-gradient(165deg, #f76e4fc8, #263256c8);
             --color: white;
@@ -45,7 +46,7 @@ ion-menu {
 .header-container {
     --background: white;
     background: linear-gradient(165deg, #f76e4fc8, #263256c8);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -70,9 +71,9 @@ ion-header {
 }
 
 ion-content {
-    --background: #fffbf7;
 
     ion-router-outlet {
+        --background: #fffbf7;
         padding: 20px;
     }
 }
