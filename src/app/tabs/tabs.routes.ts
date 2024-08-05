@@ -31,7 +31,7 @@ export const TABS_ROUTES: Routes = [
     },
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'profile',
         pathMatch: 'full',
     }
 ]

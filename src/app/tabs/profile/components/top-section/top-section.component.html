@@ -1,3 +1,26 @@
-<h3>
-  Profile
-</h3>
+<ion-avatar>
+  <img src="http://placekitten.com/200/300" />
+</ion-avatar>
+<h3>John Doe</h3>
+<div class="profile-stats">
+  <div class="posts">
+    <h4>543</h4>
+    <p>Posts</p>
+  </div>
+  <div class="followers">
+    <h4>1.4k</h4>
+    <p>Followers</p>
+  </div>
+  <div class="following">
+    <h4>1.4k</h4>
+    <p>Following</p>
+  </div>
+</div>
+<div class="buttons">
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    Follow
+  </ion-button>
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    Private
+  </ion-button>
+</div>
