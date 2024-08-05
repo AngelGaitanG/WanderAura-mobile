@@ -1,0 +1,29 @@
+:host {
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0, .7);
+
+    p {
+        margin: 0 8% 0 10%;
+        text-align: start;
+    }
+
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 15px 8% 0 11%;
+
+        .post {
+            width: 30%;
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
