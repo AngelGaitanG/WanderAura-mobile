@@ -1,0 +1,17 @@
+swiper-container {
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    swiper-slide {
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+
+        swiper-slide img {
+            display: block;
+            width: 100%;
+        }
+    }
+}

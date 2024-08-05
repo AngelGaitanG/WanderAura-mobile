@@ -1,5 +1,10 @@
-<div class="slider-container">
-  <div class="slider-item" *ngFor="let image of images; let i = index">
-    <img [src]="image.imgSrc" alt="image.imageAlt" class="slider-img">
-  </div>
-</div>
+<swiper-container class="mySwiper" pagination="true" zoom="true">
+    <swiper-slide *ngFor="let slide of images">
+        <div class="swiper-zoom-container">
+            <div class="swiper-zoom-container">
+                <img [src]="slide.imgSrc" alt="Image">
+
+            </div>
+        </div>
+    </swiper-slide>
+</swiper-container>
