@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SlidesComponent } from './slides.component';
+import { TouchSliderComponent } from './touch-slider.component';
 
-describe('SlidesComponent', () => {
-  let component: SlidesComponent;
-  let fixture: ComponentFixture<SlidesComponent>;
+describe('TouchSliderComponent', () => {
+  let component: TouchSliderComponent;
+  let fixture: ComponentFixture<TouchSliderComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlidesComponent ],
+      declarations: [ TouchSliderComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SlidesComponent);
+    fixture = TestBed.createComponent(TouchSliderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
