@@ -34,4 +34,46 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+// IONIC DIFFERENT COLORS
+
+:root {
+    --ion-color-primary: #56bee4;
+    --ion-color-primary-rgb: 86, 190, 228;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #4ca8cc;
+    --ion-color-primary-tint: #6cc4e7;
+
+    --ion-color-secondary: #fcad48;
+    --ion-color-secondary-rgb: 252, 173, 72;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #e3993d;
+    --ion-color-secondary-tint: #fcb462;
+
+    --ion-color-tertiary: #3d414a;
+    --ion-color-tertiary-rgb: 61, 65, 74;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #353841;
+    --ion-color-tertiary-tint: #51555f;
+
+    --ion-color-medium: #8f8f8f;
+    --ion-color-medium-rgb: 143, 143, 143;
+    --ion-color-medium-contrast: #ffffff;
+    --ion-color-medium-contrast-rgb: 255, 255, 255;
+    --ion-color-medium-shade: #7c7c7c;
+    --ion-color-medium-tint: #9f9f9f;
+
+    --ion-color-dark: #3d414a;
+    --ion-color-dark-rgb: 61, 65, 74;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #353841;
+    --ion-color-dark-tint: #51555f;
+
+    --ion-background-color: #ffffff;
+    --ion-text-color: #FFFFFF;
+}

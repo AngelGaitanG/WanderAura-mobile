@@ -1,0 +1,58 @@
+:host {
+    color: rgba(0, 0, 0, .7);
+
+    ion-content {
+
+        ion-title {
+            font-size: 24px;
+            padding: 0 5%;
+            color: rgba(0, 0, 0, .7);
+            margin: 30px 0;
+            margin-bottom: 20px;
+            text-align: start;
+        }
+
+        .activities-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 5%;
+            color: rgba(0, 0, 0, .7);
+            justify-content: center;
+            gap: 30px 60px;
+            width: 100%;
+
+            .activity-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 40px;
+                height: 15%;
+                width: 516px;
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
+                img {
+                    width: 100%;
+                    display: block;
+
+                    object-fit: cover;
+                }
+
+                .content {
+                    color: #f6f6f6;
+                    position: absolute;
+                    bottom: 20px;
+                    left: 40px;
+
+                    h4 {
+
+                        font-weight: bold;
+                    }
+
+                    p {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
