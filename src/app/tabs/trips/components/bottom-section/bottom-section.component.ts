@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-bottom-section',
   templateUrl: './bottom-section.component.html',
   styleUrls: ['./bottom-section.component.scss'],
+  standalone: true,
+  imports: []
 })
-export class BottomSectionComponent  implements OnInit {
+export class BottomSectionComponent {
 
   constructor() { }
 
-  ngOnInit() {}
+  
 
 }

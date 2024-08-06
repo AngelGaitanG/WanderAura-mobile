@@ -5,13 +5,14 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 import { TouchSliderComponent } from 'src/app/commons/components/slides/touch-slider/touch-slider.component';
 import { TopSectionComponent } from './components/top-section/top-section.component';
 import { MiddleSectionComponent } from './components/middle-section/middle-section.component';
+import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
 
 @Component({
   selector: 'app-trips',
   templateUrl: './trips.page.html',
   styleUrls: ['./trips.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TopSectionComponent, MiddleSectionComponent]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TopSectionComponent, MiddleSectionComponent, BottomSectionComponent]
 })
 export class TripsPage {
 
