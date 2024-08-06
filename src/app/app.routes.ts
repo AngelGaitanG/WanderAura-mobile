@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'auth',
     pathMatch: 'full',
   }
 ];
