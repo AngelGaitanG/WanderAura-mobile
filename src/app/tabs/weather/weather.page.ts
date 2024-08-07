@@ -1,20 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
+import { WeatherService } from 'src/app/commons/services/weather.service';
+import { WeatherResponse } from 'src/app/commons/interfaces/WeatherResponse.interface';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.page.html',
   styleUrls: ['./weather.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonGrid, IonCol, IonRow]
 })
 export class WeatherPage implements OnInit {
 
-  constructor() { }
+  public res: WeatherResponse | null = null;
 
+  constructor(
+      private weatherAPI: WeatherService
+  ) {}
+
+    
+  
   ngOnInit() {
+    this.getWeatherData();
   }
-
+  getWeatherData(){
+    this.weatherAPI.getWeatherData().subscribe((response) => {
+      this.res = response;
+      console.log(this.res)
+    });
+  }
 }
