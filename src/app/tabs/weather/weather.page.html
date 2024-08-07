@@ -2,26 +2,29 @@
 
   <div class="main">
     <span class="city">San Luis</span>
-    <span class="date">{{ res.current.dt }}</span>
+    <span class="date">{{ res.current.dt | dateFormatting }}</span>
   </div>
 
-  <div class="icon">
-    <img src="http://openweathermap.org/img/wn/{{ res.current.weather[0].icon }}@2x.png" alt="">
+  <div class="middle">
+
+    <div class="icon">
+      <img src="http://openweathermap.org/img/wn/{{ res.current.weather[0].icon }}@2x.png" alt="">
+    </div>
+
+    <span class="description">{{ res.current.weather[0].main }}</span>
+    <span class="temperature">{{ res.current.temp | kelvinToCelsius | number:'1.0-1'}}</span>
+
   </div>
-
-  <span class="description">{{ res.current.weather[0].main }}</span>
-  <span class="temperature">{{ res.current.temp | number: '1.0-0'}}</span>
-
 
   <ion-grid>
     <ion-row>
-      <ion-col class="day">{{ res.daily[0].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[1].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[2].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[3].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[4].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[5].dt }}</ion-col>
-      <ion-col class="day">{{ res.daily[6].dt }}</ion-col>
+      <ion-col class="day">{{ res.daily[0].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[1].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[2].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[3].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[4].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[5].dt | day }}</ion-col>
+      <ion-col class="day">{{ res.daily[6].dt | day }}</ion-col>
     </ion-row>
 
     <ion-row>
@@ -53,23 +56,23 @@
 
 
     <ion-row>
-      <ion-col class="hi-sm">{{ res.daily[0].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[1].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[2].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[3].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[4].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[5].temp.max | number: '1.0-0' }}</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[6].temp.max | number: '1.0-0' }}</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[0].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[1].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[2].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[3].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[4].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[5].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="hi-sm">{{ res.daily[6].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col class="lo-sm">{{ res.daily[0].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[0].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[1].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[2].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[3].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[4].temp.min | number: '1.0-0' }}</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[5].temp.min | number: '1.0-0' }}</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[1].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[2].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[3].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[4].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      <ion-col class="lo-sm">{{ res.daily[5].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
     </ion-row>
 
   </ion-grid>

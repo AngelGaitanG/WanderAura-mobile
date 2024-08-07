@@ -14,8 +14,8 @@ ion-header {
 }
 
 ion-content {
-    --background: linear-gradient(165deg, #f76e4fc8, #263256c8) !important;
-    --ion-text-color: #222;
+    --background: linear-gradient(to right, #CF8176, #555E7A) !important;
+    --ion-text-color: #f6f6f6;
 }
 
 .main {
@@ -81,4 +81,8 @@ ion-grid {
 
 .lo-sm {
     display: block;
+}
+
+.middle {
+    text-align: center;
 }
