@@ -1,29 +1,40 @@
 import { Routes } from "@angular/router";
+import { AuthGuard } from "../core/guards/auth.guard";
 
 export const TABS_ROUTES: Routes = [
     {
         path: 'home',
         loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+        canActivate: [AuthGuard],
     },
     {
         path: 'profile',
         loadComponent: () => import('./profile/profile.page').then((m) => m.ProfilePage),
+        canActivate: [AuthGuard],
+
     },
     {
         path: 'trips',
         loadComponent: () => import('./trips/trips.page').then((m) => m.TripsPage),
+        canActivate: [AuthGuard],
+
     },
     {
         path: 'activities',
         loadComponent: () => import('./activities/activities.page').then((m) => m.ActivitiesPage),
+        canActivate: [AuthGuard],
+
     },
     {
         path: 'settings',
         loadComponent: () => import('./settings/settings.page').then((m) => m.SettingsPage),
+        canActivate: [AuthGuard],
     },
     {
         path: 'weather',
         loadComponent: () => import('./weather/weather.page').then((m) => m.WeatherPage),
+        canActivate: [AuthGuard],
+
     },
     {
         path: 'help',

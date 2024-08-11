@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonRow, IonRefresher, IonRefresherContent } from '@ionic/angular/standalone';
-import { WeatherService } from 'src/app/commons/services/weather.service';
+import { WeatherService } from 'src/app/core/services/weather.service';
 import { WeatherResponse } from 'src/app/commons/interfaces/WeatherResponse.interface';
 import { DayPipe } from 'src/app/commons/pipes/day.pipe';
 import { DateFormattingPipe } from 'src/app/commons/pipes/date-formatting.pipe';

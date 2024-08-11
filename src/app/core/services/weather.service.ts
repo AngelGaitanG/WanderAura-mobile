@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Geolocation } from '@capacitor/geolocation';
-import { GeoResponse } from '../interfaces/GeoResponse.interface';
+import { GeoResponse } from '../../commons/interfaces/GeoResponse.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

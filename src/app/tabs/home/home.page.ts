@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule, IonContent } from '@ionic/angular';
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,15 @@ import { BottomSectionComponent } from './components/bottom-section/bottom-secti
   standalone: true,
   imports: [ IonicModule, CommonModule, BottomSectionComponent]
 })
-export class HomePage {
+export class HomePage implements OnInit{
+  constructor(
+    private authService: AuthService
+  ) {}
+  isAuthenticated = false;
+
+  ngOnInit(): void {
+    this.isAuthenticated = this.authService.isAutenticated();
+  }
   cards = [
     { title: 'Trips', img: '../../assets/backgrounds/flowers.jpg' },
     { title: 'Activities', img: '../../assets/backgrounds/country.jpg' },
@@ -24,5 +33,4 @@ export class HomePage {
     this.content.scrollToTop(800);
     console.log("hiciste click");
   }
-  constructor() {}
 }

@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser, UserResponse } from '../interfaces/User.interface';
+import { IUser, LoginUserResponse, RegisterUserResponse } from '../../commons/interfaces/User.interface';
+import { environment } from 'src/environments/environment';
+import { Observable, Subscriber, Subscription } from 'rxjs';
+
 
 
 @Injectable({
@@ -12,14 +15,12 @@ export class WanderApiService {
 
 
   registerUser(user: IUser): void {
-    this.http.post<UserResponse>('https://wanda-backend.onrender.com/auth/signup', user).subscribe({
+    this.http.post<RegisterUserResponse>(`${environment.wanderAuraApi}auth/signup`, user).subscribe({
       next: (res) => console.log('Usuario registrado correctamente:', res),
       error: (err) => console.error('Ocurrió un error durante el registro:', err),
       complete: () => console.log('Proceso de registro completado.'),
     });
   }
-  
-
 
 
 }

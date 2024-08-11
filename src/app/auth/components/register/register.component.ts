@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { IonInput, IonLabel, IonButton, IonSpinner, IonItem, IonIcon } from '@ionic/angular/standalone';
 import { IRegisterForm } from './interfaces/register.interface';
-import { WanderApiService } from 'src/app/commons/services/wander-api.service';
+import { WanderApiService } from 'src/app/core/services/wander-api.service';
 
 @Component({
   selector: 'app-register',

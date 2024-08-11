@@ -19,8 +19,12 @@
         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
           <small *ngIf="password.errors?.['required']">Password is required.</small>
         </div>
+        <div *ngIf="invalidCredentials" class="error-message">
+          <p style="color: rgba(255, 0, 0, 0.8);">Invalid Credentials</p>
+        </div>
       </div>
       <ion-button type="submit" [disabled]="loginForm.invalid">Login</ion-button>
+      <p>Don't have an account? <a>Register</a></p>
     </form>
   </div>
 </div>
