@@ -29,8 +29,8 @@ export class WeatherPage implements OnInit {
   ngOnInit() {
     this.getWeatherData();
   }
-  getWeatherData(){
-    this.weatherAPI.getWeatherData().subscribe((response) => {
+  async getWeatherData(){
+    (await this.weatherAPI.getWeatherData()).subscribe((response: WeatherResponse | null) => {
       this.res = response;
       console.log(this.res)
     });

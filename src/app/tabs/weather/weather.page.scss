@@ -6,7 +6,11 @@ $size5: 1.5em;
 $size6: 1em;
 
 ion-content {
+    width: 100%;
     --ion-font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ion-header {
@@ -30,6 +34,7 @@ ion-content {
     padding-top: 0.2em;
 }
 
+
 .date {
     display: block;
     font-size: $size5;
@@ -44,7 +49,7 @@ ion-content {
 
 .temperature {
     display: block;
-    font-size: $size1;
+    font-size: 6em;
     padding: 0;
     margin: 0;
 }
@@ -85,4 +90,9 @@ ion-grid {
 
 .middle {
     text-align: center;
+}
+
+.daily {
+    display: flex;
+    justify-content: center;
 }

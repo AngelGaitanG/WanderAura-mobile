@@ -6,8 +6,8 @@
   <div class="main">
     <span class="city">{{res.timezone | timezoneFormatter}}</span>
     <span class="date">{{ res.current.dt | dateFormatting }}</span>
-  </div>
 
+  </div>
   <div class="middle">
 
     <div class="icon">
@@ -18,66 +18,68 @@
     <span class="temperature">{{ res.current.temp | kelvinToCelsius | number:'1.0-1'}}</span>
 
   </div>
+  <div class="daily">
 
-  <ion-grid>
-    <ion-row>
-      <ion-col class="day">{{ res.daily[0].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[1].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[2].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[3].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[4].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[5].dt | day }}</ion-col>
-      <ion-col class="day">{{ res.daily[6].dt | day }}</ion-col>
-    </ion-row>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="day">{{ res.daily[0].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[1].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[2].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[3].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[4].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[5].dt | day }}</ion-col>
+        <ion-col class="day">{{ res.daily[6].dt | day }}</ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-      <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+        <ion-col class="precipitation">{{ res.daily[0].rain | number: '1-0-0' }}</ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[0].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[1].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[2].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[3].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[4].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[5].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-      <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[6].weather[0].icon }}@2x.png"
-          alt=""></ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[0].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[1].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[2].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[3].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[4].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[5].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+        <ion-col class="icon-sm"><img src="http://openweathermap.org/img/wn/{{ res.daily[6].weather[0].icon }}@2x.png"
+            alt=""></ion-col>
+      </ion-row>
 
 
-    <ion-row>
-      <ion-col class="hi-sm">{{ res.daily[0].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[1].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[2].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[3].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[4].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[5].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="hi-sm">{{ res.daily[6].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col class="hi-sm">{{ res.daily[0].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[1].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[2].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[3].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[4].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[5].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="hi-sm">{{ res.daily[6].temp.max | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[1].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[2].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[3].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[4].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-      <ion-col class="lo-sm">{{ res.daily[5].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[0].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[1].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[2].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[3].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[4].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+        <ion-col class="lo-sm">{{ res.daily[5].temp.min | kelvinToCelsius | number:'1.0-1' }}°C</ion-col>
+      </ion-row>
 
-  </ion-grid>
+    </ion-grid>
 
+  </div>
 </ion-content>
