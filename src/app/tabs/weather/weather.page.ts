@@ -7,13 +7,14 @@ import { WeatherResponse } from 'src/app/commons/interfaces/WeatherResponse.inte
 import { DayPipe } from 'src/app/commons/pipes/day.pipe';
 import { DateFormattingPipe } from 'src/app/commons/pipes/date-formatting.pipe';
 import { KelvinToCelsiusPipe } from 'src/app/commons/pipes/kelvin-to-celsius.pipe';
+import { TimezoneFormatterPipe } from 'src/app/commons/pipes/timezone-formatter.pipe';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.page.html',
   styleUrls: ['./weather.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonRefresher, IonRefresherContent, IonGrid, IonCol, IonRow, DayPipe, DateFormattingPipe, KelvinToCelsiusPipe, ]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonRefresher, IonRefresherContent, IonGrid, IonCol, IonRow, DayPipe, DateFormattingPipe, KelvinToCelsiusPipe, TimezoneFormatterPipe]
 })
 export class WeatherPage implements OnInit {
 

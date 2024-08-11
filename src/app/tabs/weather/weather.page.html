@@ -4,7 +4,7 @@
   </ion-refresher>
 
   <div class="main">
-    <span class="city">San Luis</span>
+    <span class="city">{{res.timezone | timezoneFormatter}}</span>
     <span class="date">{{ res.current.dt | dateFormatting }}</span>
   </div>
 
@@ -79,4 +79,5 @@
     </ion-row>
 
   </ion-grid>
+
 </ion-content>

@@ -69,6 +69,7 @@ export interface WeatherResponse  {
         }
         rain: number
     },
-    ]
+    ],
+    timezone: string;
         
 }
