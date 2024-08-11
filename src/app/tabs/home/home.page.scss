@@ -22,7 +22,7 @@
 
         .description {
             text-align: start;
-            margin: 10px 14%;
+            margin: 10px 5%;
             font-size: 16px;
             color: rgba(0, 0, 0, .7);
         }
@@ -38,10 +38,10 @@
             justify-content: center;
             flex-wrap: wrap;
             width: 100%;
-            gap: 35px 10px;
+            gap: 45px;
 
             .card {
-                width: 35%;
+                width: 40%;
                 height: 30%;
                 position: relative;
 

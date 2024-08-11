@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonRow, IonRefresher, IonRefresherContent } from '@ionic/angular/standalone';
 import { WeatherService } from 'src/app/commons/services/weather.service';
 import { WeatherResponse } from 'src/app/commons/interfaces/WeatherResponse.interface';
 import { DayPipe } from 'src/app/commons/pipes/day.pipe';
@@ -13,7 +13,7 @@ import { KelvinToCelsiusPipe } from 'src/app/commons/pipes/kelvin-to-celsius.pip
   templateUrl: './weather.page.html',
   styleUrls: ['./weather.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonGrid, IonCol, IonRow, DayPipe, DateFormattingPipe, KelvinToCelsiusPipe]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonRefresher, IonRefresherContent, IonGrid, IonCol, IonRow, DayPipe, DateFormattingPipe, KelvinToCelsiusPipe, ]
 })
 export class WeatherPage implements OnInit {
 
@@ -33,5 +33,11 @@ export class WeatherPage implements OnInit {
       this.res = response;
       console.log(this.res)
     });
+  }
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      this.getWeatherData();
+      event.target.complete();
+    }, 1500);
   }
 }
