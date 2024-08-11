@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Geolocation } from '@capacitor/geolocation';
 import { GeoResponse } from '../interfaces/GeoResponse.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'  
@@ -22,8 +23,9 @@ export class WeatherService {
     let lat = this.coordinates?.latitude;
     let lon = this.coordinates?.longitude;
     let exclude = 'minutely,hourly,alerts';
-    let apiId = '41ae083203c7c4b9589aaf04c09f6e7d';
-    let queryString = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${apiId}`;
+    let apiId = environment.weatherApiKey;
+    let apiUrl = environment.weatherApiUrl;
+    let queryString = `${apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${apiId}`;
     return this.http.get(queryString);
   }
 }
