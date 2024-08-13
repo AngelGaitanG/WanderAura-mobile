@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser, LoginUserResponse, RegisterUserResponse } from '../../commons/interfaces/User.interface';
+import { IUser, LoginUserResponse, ProfileUserResponse, RegisterUserResponse } from '../../commons/interfaces/User.interface';
 import { environment } from 'src/environments/environment';
 import { Observable, Subscriber, Subscription } from 'rxjs';
 
@@ -22,5 +22,12 @@ export class WanderApiService {
     });
   }
 
+  getProfile():Observable<ProfileUserResponse> {
+    return this.http.get<ProfileUserResponse>(`${environment.wanderAuraApi}users/profile`, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+      }
+    });
+  }
 
 }

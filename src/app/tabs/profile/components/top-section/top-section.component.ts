@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonAvatar, IonButton } from '@ionic/angular/standalone';
+import { ProfileUserResponse } from 'src/app/commons/interfaces/User.interface';
 
 @Component({
   selector: 'app-top-section',
@@ -9,7 +10,7 @@ import { IonAvatar, IonButton } from '@ionic/angular/standalone';
   imports: [IonAvatar, IonButton],
 })
 export class TopSectionComponent {
-
+@Input() info: any;
   onClick() {}
 
 

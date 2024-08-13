@@ -7,7 +7,7 @@ export interface IUser {
 }
 
 export interface RegisterUserResponse {
-id: string;
+  id: string;
   name: string;
   email: string;
   perfilPhoto: string | null;
@@ -16,4 +16,11 @@ id: string;
 export interface LoginUserResponse {
         success: boolean; 
         access_token: string;
+}
+
+export interface ProfileUserResponse {
+  id: string;
+  name: string;
+  email: string;
+  perfilPhoto: string | null;
 }
