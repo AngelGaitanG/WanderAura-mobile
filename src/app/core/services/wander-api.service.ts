@@ -23,7 +23,7 @@ export class WanderApiService {
   }
 
   getProfile():Observable<ProfileUserResponse> {
-    return this.http.get<ProfileUserResponse>(`${environment.wanderAuraApi}users/profile`, {
+    return this.http.get<ProfileUserResponse>(`${environment.wanderAuraApi}users/user-data`, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('authToken')
       }

@@ -9,9 +9,11 @@
 
 
     .title {
+        color: rgba(0, 0, 0, 0.8);
         text-align: left;
-        align-self: flex-start; // Opcional: Para asegurarse de que el elemento se alinee al inicio del contenedor flex
-        width: 100%; // Para asegurar que el texto no quede limitado por el contenedor
+        align-self: flex-start;
+        width: 100%;
+        margin-top: 40px;
     }
 
     .yourtrip-container {

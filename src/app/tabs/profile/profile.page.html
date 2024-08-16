@@ -1,4 +1,5 @@
 <ion-content [fullscreen]="true">
-  <app-top-section [info]="info"></app-top-section>
-  <app-bottom-section></app-bottom-section>
+  <div *ngIf="charging" class="loading">Cargando...</div>
+  <app-top-section [info]="info" *ngIf="!charging"></app-top-section>
+  <app-bottom-section [info]="info" *ngIf="!charging"></app-bottom-section>
 </ion-content>

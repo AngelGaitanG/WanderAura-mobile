@@ -15,19 +15,22 @@ import { WanderApiService } from 'src/app/core/services/wander-api.service';
 })
 export class ProfilePage implements OnInit {
   info: any = {}
+  charging: boolean = false;
   constructor(
     private wanderApiService: WanderApiService
   ) { }
 
   ngOnInit() {
+    this.charging = true;
    this.wanderApiService.getProfile().subscribe({
      next: (res) => {
        this.info = res;
+       console.log(this.info);
      },
      error: (err) => console.error(err),
-     complete: () => console.log('Proceso terminado')
-   })
-   console.log(this.info);
+     complete: () => {
+      this.charging = false;
+     }   })
   }
 
 }

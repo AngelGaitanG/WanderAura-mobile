@@ -6,6 +6,8 @@ import { TouchSliderComponent } from 'src/app/commons/components/slides/touch-sl
 import { TopSectionComponent } from './components/top-section/top-section.component';
 import { MiddleSectionComponent } from './components/middle-section/middle-section.component';
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
+import { TripsService } from 'src/app/core/services/trips.service';
+import { TripResponse } from 'src/app/commons/interfaces/Trips.interface';
 
 @Component({
   selector: 'app-trips',
@@ -14,23 +16,22 @@ import { BottomSectionComponent } from './components/bottom-section/bottom-secti
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, TopSectionComponent, MiddleSectionComponent, BottomSectionComponent]
 })
-export class TripsPage {
+export class TripsPage implements OnInit {
+  trips: TripResponse[] = [];
+  constructor(private tripsService: TripsService) { }
 
-  images = [
-    {
-      imgSrc: "assets/backgrounds/autumn.jpg", imgAlt: "Mountain"
-    },
-    {
-      imgSrc: "assets/backgrounds/mountain.jpg", imgAlt: "Mountain"
-    },
-    {
-      imgSrc: "assets/backgrounds/flowers.jpg", imgAlt: "Flowers"
-    },
-    {
-      imgSrc: "assets/backgrounds/forest.jpg", imgAlt: "Forest"
-    }
-  ]
-
-  constructor() { }
+  ngOnInit(): void {
+    this.tripsService.getTrips().subscribe({
+      next: (res) => {
+        this.trips = res;
+      },
+      error(err) {
+        console.error(err);
+      },
+      complete() {
+        console.log('complete');
+      },
+    });
+  }
 
 }

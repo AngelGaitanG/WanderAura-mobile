@@ -2,6 +2,7 @@
     width: 100%;
     text-align: center;
     color: rgb(0, 0, 0, .7);
+    padding: 5%;
 
     p {
         margin: 0 5%;
@@ -12,8 +13,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 10px 22px;
+        gap: 10px;
         margin: 15px 5% 0 5%;
+        width: 96%;
 
         .post {
             width: 30%;

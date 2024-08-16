@@ -1,33 +1,16 @@
 <h4 class="title">Must see</h4>
 <div class="card-container">
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/36/e9/8b/36e98bd97ad59953da4c7474b95529bc.jpg" alt="River">
+  <div class="card" *ngFor="let trip of trips">
+    <img src="{{trip.image}}" alt="River">
     <div class="content">
       <div class="description">
-        <h4 class="card-title">Card title</h4>
-        <p>Descripcion card</p>
+        <h4 class="card-title">{{trip.name}}</h4>
+        <p *ngIf="trip.description.length <= 70">{{trip.description}}</p>
+        <p *ngIf="trip.description.length >= 70">{{trip.description.substring(0, 70)}}...</p>
+
       </div>
-      <ion-button>+</ion-button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/36/e9/8b/36e98bd97ad59953da4c7474b95529bc.jpg" alt="River">
-    <div class="content">
-      <div class="description">
-        <h4 class="card-title">Card title</h4>
-        <p>Descripcion card</p>
-      </div>
-      <ion-button>+</ion-button>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/36/e9/8b/36e98bd97ad59953da4c7474b95529bc.jpg" alt="River">
-    <div class="content">
-      <div class="description">
-        <h4 class="card-title">Card title</h4>
-        <p>Descripcion card</p>
-      </div>
-      <ion-button>+</ion-button>
+      <ion-button><ion-icon name="add-outline"></ion-icon></ion-button>
+
     </div>
   </div>
 </div>
