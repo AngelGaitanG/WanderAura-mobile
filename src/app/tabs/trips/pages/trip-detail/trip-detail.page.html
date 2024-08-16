@@ -1,24 +1,28 @@
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-img [src]="trip?.image"></ion-img>
-      <ion-card-title>{{ trip.name }}</ion-card-title>
-      <ion-card-subtitle>{{ trip.description }}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Destination: {{ trip?.destination?.name }}</p>
-      <p>Accommodation: {{ trip.accommodation }}</p>
-      <p>Transportation: <span *ngFor="let transportation of trip.transport">{{ transportation.type | uppercase
-          }}</span></p>
-      <p>Activities: <span *ngFor="let activity of trip.activities">{{ activity.name }}, </span></p>
-      <p>Duración: {{ trip.duration }} días</p>
-      <p>Price: {{ trip.price }} ARS</p>
+  <div class="trip">
+    <img [src]="trip?.image" />
+    <div class="header">
+      <h4>{{ trip?.name }}</h4>
+      <p>{{ trip?.description }}</p>
+      <p>{{ trip?.destination?.name }} San Luis <span>10/10</span></p>
 
-    </ion-card-content>
-    <ion-button (click)="createPayment(trip.id)" *ngIf="!successPayment">Reservar</ion-button>
-    <div *ngIf="successPayment">
-      <p>Gracias por tu reserva</p>
-      <ion-icon name="checkmark-outline"></ion-icon>
     </div>
-  </ion-card>
+    <div class="content">
+      <p>Destination: {{ trip?.destination?.name }}</p>
+      <p>Accommodation: {{ trip?.accommodation }}</p>
+      <p>Transportation: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
+          }}</span></p>
+      <p>Activities: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
+      <p>Duración: {{ trip?.duration }} días</p>
+      <p>Price: {{ trip?.price }} ARS</p>
+    </div>
+    <div class="button">
+      <ion-button (click)="createPayment(trip.id)" *ngIf="!successPayment">Reservar</ion-button>
+      <div *ngIf="successPayment">
+        <p>Gracias por tu reserva</p>
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
 </ion-content>

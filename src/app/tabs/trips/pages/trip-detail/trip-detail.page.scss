@@ -1,0 +1,24 @@
+ion-content {
+    .trip {
+
+        .header {
+            padding: 0 5%;
+            color: rgba(0, 0, 0, .7);
+        }
+
+        .content {
+            padding: 0 5%;
+            color: rgba(0, 0, 0, .7);
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            color: white;
+        }
+    }
+
+    .posts {}
+}

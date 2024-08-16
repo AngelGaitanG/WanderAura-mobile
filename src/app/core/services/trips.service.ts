@@ -16,7 +16,7 @@ export class TripsService {
   }
 
   getTrip(id: string):Observable<TripResponse> {
-    return this.http.get<TripResponse>(`${environment.wanderAuraApi}trips/${id}`);
+    return this.http.get<TripResponse>(`${environment.wanderAuraApi}trips/${id}`, );
   }
 
 }

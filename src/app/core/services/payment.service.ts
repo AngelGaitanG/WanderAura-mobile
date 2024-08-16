@@ -12,8 +12,13 @@ export class PaymentService {
 
 
   simplePayment(tripId: string):Observable<object> {
-    const body = { tripId: tripId }
-    return this.http.post<object>(`${environment.wanderAuraApi}payments/simple`, body);
+    console.log(tripId);
+    const body = {tripId: tripId};
+    return this.http.post<object>(`${environment.wanderAuraApi}payments/simple`, body, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+      }
+    });
   }
 
 }

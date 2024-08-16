@@ -1,12 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const localUrl = 'http://localhost:3001/';
+const deployUrl = 'https://wanda-backend.onrender.com/';
 
 export const environment = {
   production: true,
   weatherApiKey: '41ae083203c7c4b9589aaf04c09f6e7d',
   weatherApiUrl: 'https://api.openweathermap.org/data/3.0',
-  wanderAuraApi: 'https://wanda-backend.onrender.com/'
+  wanderAuraApi: deployUrl
 };
 
 /*

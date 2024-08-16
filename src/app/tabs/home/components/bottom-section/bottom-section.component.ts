@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarouselComponent } from 'src/app/commons/components/carousel/carousel.component';
 import { IonButton, IonIcon } from '@ionic/angular/standalone';
+import { DestinationService } from 'src/app/core/services/destination.service';
 
 @Component({
   selector: 'app-bottom-section',
@@ -10,28 +11,27 @@ import { IonButton, IonIcon } from '@ionic/angular/standalone';
   imports: [CarouselComponent, CommonModule, IonButton, IonIcon ],
   standalone: true
 })
-export class BottomSectionComponent {
-  carouselItems = [
-    {
-      image: '../../../../assets/backgrounds/flowers.jpg',
-      title: 'Item 1',
-      description: 'Description for item 1',
-      link: '#'
-    },
-    {
-      image: '../../../../assets/backgrounds/mountain.jpg',
-      title: 'Item 2',
-      description: 'Description for item 2',
-      link: '#'
-    },
-    {
-      image: '../../../../assets/backgrounds/country.jpg',
-      title: 'Item 3',
-      description: 'Description for item 3',
-      link: '#'
-    }
-  ];
+export class BottomSectionComponent implements OnInit {
+  carouselItems: any;
 
-  constructor() { }
+  constructor(
+    private destinationService: DestinationService
+  ) { }
+
+  ngOnInit(): void {
+    this.destinationService.getDestinations().subscribe({
+      next: (res) => {
+        this.carouselItems = res;
+        console.log(this.carouselItems);
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('complete');
+      },
+    })
+  }
+
 
 }

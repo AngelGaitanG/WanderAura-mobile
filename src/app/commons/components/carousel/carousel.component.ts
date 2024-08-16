@@ -17,7 +17,7 @@ export class CarouselComponent implements OnInit {
   previousIndex: number = -1;
 
   ngOnInit(): void {
-    if (this.items.length > 0) {
+    if (this.items?.length > 0) {
       this.currentIndex = 0;
     }
   }

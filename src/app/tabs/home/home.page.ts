@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule, IonContent } from '@ionic/angular';
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class HomePage implements OnInit{
   constructor(
-    private authService: AuthService
+    private authService: AuthService, private router: Router
   ) {}
   isAuthenticated = false;
 
@@ -28,6 +29,10 @@ export class HomePage implements OnInit{
   ];
 
   @ViewChild(IonContent) content!: IonContent;
+
+  getStarted() {
+    this.router.navigate(['/tabs/trips']);
+  }
 
   up() {
     this.content.scrollToTop(800);

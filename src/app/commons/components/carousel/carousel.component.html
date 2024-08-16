@@ -2,9 +2,9 @@
   <div *ngFor="let item of items; let i = index" class="carousel-item" [class.active]="i === currentIndex"
     [class.prev]="i === previousIndex && currentIndex < previousIndex"
     [class.next]="i === previousIndex && currentIndex > previousIndex">
-    <img [src]="item.image" alt="Image">
+    <img [src]="item.photos[0]" alt="Image">
     <div class="carousel-description">
-      <h3>{{ item.title }}</h3>
+      <h3>{{ item.name }}</h3>
       <p>{{ item.description }}</p>
     </div>
   </div>
