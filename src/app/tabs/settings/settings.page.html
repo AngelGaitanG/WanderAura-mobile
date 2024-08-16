@@ -1,11 +1,11 @@
 <ion-content [fullscreen]="true">
-  <ion-card button (click)="cardClick()" class="profile-card">
+  <ion-card button class="profile-card">
     <div class="card-container">
       <ion-icon name="person-outline"></ion-icon>
       <p>Edit Profile</p>
     </div>
   </ion-card>
-  <ion-card button (click)="cardClick()">
+  <ion-card button>
     <div class="card-container">
       <ion-icon name="notifications-outline"></ion-icon>
       <p>Notifications</p>
@@ -17,7 +17,7 @@
       <p>Help</p>
     </div>
   </ion-card>
-  <ion-card button color="danger">
+  <ion-card button color="danger" (click)="logout()">
     <div class="card-container">
       <ion-icon name="log-out-outline"></ion-icon>
       <p>Logout</p>
