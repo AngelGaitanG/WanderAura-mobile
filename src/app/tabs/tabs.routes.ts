@@ -20,6 +20,11 @@ export const TABS_ROUTES: Routes = [
 
     },
     {
+        path: 'trips/:trip',
+        loadComponent: () => import('./trips/pages/trip-detail/trip-detail.page').then((m) => m.TripDetailPage),
+        canActivate: [AuthGuard],
+    },
+    {
         path: 'activities',
         loadComponent: () => import('./activities/activities.page').then((m) => m.ActivitiesPage),
         canActivate: [AuthGuard],

@@ -9,7 +9,7 @@
         <p *ngIf="trip.description.length >= 70">{{trip.description.substring(0, 70)}}...</p>
 
       </div>
-      <ion-button><ion-icon name="add-outline"></ion-icon></ion-button>
+      <ion-button (click)="goToTripDetail(trip.id)"><ion-icon name="add-outline"></ion-icon></ion-button>
 
     </div>
   </div>

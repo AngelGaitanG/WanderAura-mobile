@@ -24,6 +24,7 @@ export class TripsPage implements OnInit {
     this.tripsService.getTrips().subscribe({
       next: (res) => {
         this.trips = res;
+        console.log(this.trips);
       },
       error(err) {
         console.error(err);

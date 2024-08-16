@@ -1,13 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>trip-detail</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-img [src]="trip.image"></ion-img>
+      <ion-card-title>{{ trip.name }}</ion-card-title>
+      <ion-card-subtitle>{{ trip.description }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Destination: {{ trip?.destination?.name }}</p>
+      <p>Accommodation: {{ trip.accommodation }}</p>
+      <p>Transportation: <span *ngFor="let transportation of trip.transport">{{ transportation.type | uppercase
+          }}</span></p>
+      <p>Activities: <span *ngFor="let activity of trip.activities">{{ activity.name }}, </span></p>
+      <p>Duración: {{ trip.duration }} días</p>
+      <p>Price: {{ trip.price }} ARS</p>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">trip-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    </ion-card-content>
+    <ion-button>Reservar</ion-button>
+  </ion-card>
 </ion-content>
