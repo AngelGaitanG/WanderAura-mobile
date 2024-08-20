@@ -2,7 +2,7 @@
 <div class="login-container">
   <button (click)="goBackToParent()" class="back-button"><i class="fa-solid fa-arrow-left"></i></button>
   <h2>Login</h2>
-  <div class="login-form">
+  <div class="login-form" *ngIf="!isLoading">
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <div class="input-container">
         <ion-input fill="outline" shape="round" label="Email" label-placement="floating" type="email" name="email"
@@ -24,7 +24,11 @@
         </div>
       </div>
       <ion-button type="submit" [disabled]="loginForm.invalid">Login</ion-button>
-      <p>Don't have an account? <a>Register</a></p>
+      <p>Don't have an account? <a (click)="goToRegister()">Register</a></p>
     </form>
+  </div>
+  <div class="loading" *ngIf="isLoading">
+    <ion-spinner color="primary" style="width: 1.8em;"></ion-spinner>
+    <p>La base de datos está desplegada en un servidor gratuito, por favor, espere por lo menos 60 segundos.</p>
   </div>
 </div>

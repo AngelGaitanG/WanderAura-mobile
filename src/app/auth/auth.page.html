@@ -4,7 +4,8 @@
     <ion-button (click)="login()">Iniciar Sesion</ion-button>
     <ion-button (click)="register()">Registrarse</ion-button>
   </div>
-  <app-login (goBack)="goBackFromChild($event)" *ngIf="buttonActivated === 'Login'"></app-login>
+  <app-login (goBack)="goBackFromChild($event)" (register)="goToRegister($event)"
+    *ngIf="buttonActivated === 'Login'"></app-login>
   <app-register (goBack)="goBackFromChild($event)" *ngIf="buttonActivated === 'Register'"></app-register>
   <div class="terms">
     <a href="#">Terminos y Condiciones</a>

@@ -34,4 +34,8 @@ export class AuthPage {
     this.buttonActivated = ButtonActivated.None;
   }
 
+  goToRegister(event: Event):void {
+    this.buttonActivated = ButtonActivated.Register;
+  }
+
 }
