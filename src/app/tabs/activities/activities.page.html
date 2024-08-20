@@ -1,29 +1,15 @@
 <ion-content [fullscreen]="true">
   <ion-title>Activities</ion-title>
   <div class="activities-container">
-    <div class="activity-card">
-      <img src="https://cdn.britannica.com/94/125794-050-FB09B3F4/Hikers-Gore-Range-Mountains-Denver.jpg" alt="hiking">
+    <div class="activity-card" *ngFor="let activity of activities; let i = index">
+      <img [src]="activityImages[i]" alt="activity image">
       <div class="content">
-        <ion-icon slot="start" name="add"></ion-icon>
-        <h4>Card title</h4>
-        <p>A challenging but rewarding hiking adventure through mountainous landscapes.</p>
+        <h4>{{activity.name}}</h4>
+        <p>{{activity.description}}</p>
       </div>
-    </div>
-    <div class="activity-card">
-      <img src="https://cdn.britannica.com/94/125794-050-FB09B3F4/Hikers-Gore-Range-Mountains-Denver.jpg" alt="hiking">
-      <div class="content">
-        <ion-icon slot="start" name="add"></ion-icon>
-        <h4>Card title</h4>
-        <p>A challenging but rewarding hiking adventure through mountainous landscapes.</p>
-      </div>
-    </div>
-    <div class="activity-card">
-      <img src="https://cdn.britannica.com/94/125794-050-FB09B3F4/Hikers-Gore-Range-Mountains-Denver.jpg" alt="hiking">
-      <div class="content">
-        <ion-icon slot="start" name="add"></ion-icon>
-        <h4>Card title</h4>
-        <p>A challenging but rewarding hiking adventure through mountainous landscapes.</p>
-      </div>
+      <ion-button color="secondary">
+        <ion-icon name="add" style="width: 3em;"></ion-icon>
+      </ion-button>
     </div>
   </div>
 </ion-content>

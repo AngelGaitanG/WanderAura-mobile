@@ -38,19 +38,29 @@
                 }
 
                 .content {
-                    color: #f6f6f6;
                     position: absolute;
                     bottom: 20px;
                     left: 40px;
+                    color: #f6f6f6;
 
                     h4 {
-
+                        /* color del texto */
+                        text-shadow: 2px 2px 2px black;
                         font-weight: bold;
                     }
 
                     p {
+                        /* color del texto */
+                        text-shadow: 2px 2px 2px black;
                         width: 60%;
                     }
+
+                }
+
+                ion-button {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 20px;
                 }
             }
         }
