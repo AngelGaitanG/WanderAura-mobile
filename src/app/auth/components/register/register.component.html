@@ -43,6 +43,9 @@
       <ion-button type="submit" [disabled]="loginForm.invalid" style="margin-bottom: 10px;">Register</ion-button>
     </form>
     <ion-item *ngIf="userRegistered">
+      <p *ngIf="!showSuccessIcon">La base de datos está desplagada en un servidor gratuito, por favor, espere al menos
+        60
+        segundos.</p>
       <ion-spinner color="primary" *ngIf="!showSuccessIcon"></ion-spinner>
       <ion-icon name="checkmark-circle" color="success" *ngIf="showSuccessIcon"></ion-icon>
       <p *ngIf="showSuccessIcon">User registered!</p>

@@ -46,15 +46,11 @@ export class TripDetailPage implements OnInit {
   createPayment(tripId: string) {
     this.paymentsService.simplePayment(tripId).subscribe({
       next: (res) => {
-        console.log(res);
         this.successPayment = true;
       },
       error(err) {
         console.error(err);
-      },
-      complete() {
-        console.log('complete');
-      },
+      }
     })
   }
 

@@ -24,14 +24,20 @@ constructor(
     this.goBack.emit();
   }
 
-  onSubmit(form: NgForm) {
+
+
+   onSubmit(form: NgForm) {
     if (form.valid) {
       const loginForm: IRegisterForm = form.value;
-      this.wanderApiService.registerUser(loginForm);
       this.userRegistered = true;
-      setTimeout(() => {
-        this.showSuccessIcon = true;
-      }, 1500);
+      this.wanderApiService.registerUser(loginForm).subscribe({
+        next: () => {
+          this.showSuccessIcon = true;
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      });
     } 
   }
 

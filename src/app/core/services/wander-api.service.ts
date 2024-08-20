@@ -14,12 +14,8 @@ export class WanderApiService {
   constructor(private http: HttpClient) { }
 
 
-  registerUser(user: IUser): void {
-    this.http.post<RegisterUserResponse>(`${environment.wanderAuraApi}auth/signup`, user).subscribe({
-      next: (res) => console.log('Usuario registrado correctamente:', res),
-      error: (err) => console.error('Ocurrió un error durante el registro:', err),
-      complete: () => console.log('Proceso de registro completado.'),
-    });
+  registerUser(user: IUser): Observable<RegisterUserResponse> {
+    return this.http.post<RegisterUserResponse>(`${environment.wanderAuraApi}auth/signup`, user)
   }
 
   getProfile():Observable<ProfileUserResponse> {
