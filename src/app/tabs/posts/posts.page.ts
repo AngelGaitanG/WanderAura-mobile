@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonImg, IonInfiniteScroll, IonInfiniteScrollContent,  } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.page.html',
   styleUrls: ['./posts.page.scss'],
-  standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [ IonContent, IonGrid, IonRow, IonCol, IonImg, IonInfiniteScroll, IonInfiniteScrollContent, CommonModule ],
+  standalone: true
 })
 export class PostsPage implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
+    console.log('PostsPage');
   }
 
 }

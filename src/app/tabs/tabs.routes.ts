@@ -42,6 +42,11 @@ export const TABS_ROUTES: Routes = [
 
     },
     {
+        path: 'posts',
+        loadComponent: () => import('./posts/posts.page').then((m) => m.PostsPage),
+        canActivate: [AuthGuard],
+    },
+    {
         path: 'help',
         loadComponent: () => import('./help/help.page').then((m) => m.HelpPage),
     },
