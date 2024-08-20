@@ -6,13 +6,14 @@ import { ActivatedRoute } from '@angular/router';
 import { TripsService } from 'src/app/core/services/trips.service';
 import { TripResponse } from 'src/app/commons/interfaces/Trips.interface';
 import { PaymentService } from 'src/app/core/services/payment.service';
+import { TripPostsComponent } from '../../components/trip-posts/trip-posts';
 
 @Component({
   selector: 'app-trip-detail',
   templateUrl: './trip-detail.page.html',
   styleUrls: ['./trip-detail.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard, IonImg, IonButton, CommonModule, IonIcon]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard, IonImg, IonButton, CommonModule, IonIcon, TripPostsComponent]
 })
 export class TripDetailPage implements OnInit {
   tripId: string | null = null;
