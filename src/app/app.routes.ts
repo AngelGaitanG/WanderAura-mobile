@@ -14,5 +14,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full',
+  },
+  {
+    path: 'posts',
+    loadComponent: () => import('./posts/posts.page').then( m => m.PostsPage)
   }
 ];
