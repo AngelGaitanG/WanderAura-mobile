@@ -31,13 +31,9 @@ export class TripDetailPage implements OnInit {
       this.tripsService.getTrip(this.tripId).subscribe({
         next: (res) => {
           this.trip = res;
-          console.log(this.trip);
         },
         error: (err) => {
           console.error(err);
-        },
-        complete: () => {
-          console.log('complete');
         },
       });
     }

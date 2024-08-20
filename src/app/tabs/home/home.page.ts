@@ -36,6 +36,5 @@ export class HomePage implements OnInit{
 
   up() {
     this.content.scrollToTop(800);
-    console.log("hiciste click");
   }
 }

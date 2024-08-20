@@ -22,14 +22,10 @@ export class BottomSectionComponent implements OnInit {
     this.destinationService.getDestinations().subscribe({
       next: (res) => {
         this.carouselItems = res;
-        console.log(this.carouselItems);
       },
       error: (err) => {
         console.error(err);
-      },
-      complete: () => {
-        console.log('complete');
-      },
+      }
     })
   }
 

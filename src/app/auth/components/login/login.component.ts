@@ -39,7 +39,6 @@ export class LoginComponent  {
         next: (res: LoginUserResponse) => {
           if (res.success) {
             localStorage.setItem('authToken', res.access_token)
-            console.log('Token:', res.access_token);
             this.router.navigate(['/tabs/home']);
             this.isLoading = false;
           } else {

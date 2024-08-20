@@ -32,7 +32,6 @@ export class WeatherPage implements OnInit {
   async getWeatherData(){
     (await this.weatherAPI.getWeatherData()).subscribe((response: WeatherResponse | null) => {
       this.res = response;
-      console.log(this.res)
     });
   }
   handleRefresh(event: any) {

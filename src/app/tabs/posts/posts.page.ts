@@ -57,6 +57,6 @@ export class PostsPage implements OnInit {
 
   openPost(post: any) {
     // Aquí puedes simular la apertura del post (por ejemplo, mostrar un modal)
-    console.log('Post seleccionado:', post);
+    
   }
 }

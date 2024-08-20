@@ -14,8 +14,6 @@ export class WeatherService {
 
  printCurrentPosition = async () => {
   this.coordinates = (await Geolocation.getCurrentPosition()).coords;
-
-  console.log('Current position:', this.coordinates);
 };
 
   async getWeatherData(): Promise<Observable<any>> {

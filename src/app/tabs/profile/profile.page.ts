@@ -25,7 +25,6 @@ export class ProfilePage implements OnInit {
    this.wanderApiService.getProfile().subscribe({
      next: (res) => {
        this.info = res;
-       console.log(this.info);
      },
      error: (err) => console.error(err),
      complete: () => {
