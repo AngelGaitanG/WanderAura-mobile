@@ -11,6 +11,7 @@ ion-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 ion-header {
@@ -64,7 +65,7 @@ ion-grid {
     text-align: center;
     position: fixed;
     bottom: 0%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
 }
 
 .day {
