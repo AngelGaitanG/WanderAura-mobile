@@ -22,8 +22,11 @@
         height: 150px;
         margin-top: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        background-color: #E48876;
 
         img {
+            display: block;
+            object-fit: cover;
             border-radius: 50%;
         }
     }
