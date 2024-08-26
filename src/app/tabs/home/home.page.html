@@ -11,8 +11,8 @@
         the best activities for your trip. Thank you.
     </p>
     <div class="card-container">
-        <div *ngFor="let card of cards" class="card">
-            <img alt="Silhouette of mountains" [src]="card.img" />
+        <div *ngFor="let card of cards" class="card" [routerLink]="'/tabs/' + card.routerLink">
+            <img alt="Silhouette of mountains" [src]="card.img" alt="Card image" />
             <h3 class="title">{{card.title}}</h3>
         </div>
     </div>

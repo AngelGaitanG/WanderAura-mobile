@@ -3,14 +3,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule, IonContent } from '@ionic/angular';
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [ IonicModule, CommonModule, BottomSectionComponent]
+  imports: [ IonicModule, CommonModule, BottomSectionComponent, RouterLink]
 })
 export class HomePage implements OnInit{
   constructor(
@@ -22,10 +22,9 @@ export class HomePage implements OnInit{
     this.isAuthenticated = this.authService.isAutenticated();
   }
   cards = [
-    { title: 'Trips', img: '../../assets/backgrounds/flowers.jpg' },
-    { title: 'Activities', img: '../../assets/backgrounds/country.jpg' },
-    { title: 'Tours', img: '../../assets/backgrounds/forest.jpg' },
-    { title: 'Tour Guides', img: '../../assets/backgrounds/autumn.jpg' }
+    { title: 'Trips', img: '../../assets/backgrounds/flowers.jpg', routerLink: 'trips' },
+    { title: 'Activities', img: '../../assets/backgrounds/country.jpg', routerLink: 'activities' },
+    { title: 'Tour Guides', img: '../../assets/backgrounds/autumn.jpg', routerLink: 'tour-guides' }
   ];
 
   @ViewChild(IonContent) content!: IonContent;
