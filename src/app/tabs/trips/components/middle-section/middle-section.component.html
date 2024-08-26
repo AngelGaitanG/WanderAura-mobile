@@ -5,11 +5,13 @@
     <div class="content">
       <div class="description">
         <h4 class="card-title">{{trip.name}}</h4>
-        <p *ngIf="trip.description.length <= 70">{{trip.description}}</p>
-        <p *ngIf="trip.description.length >= 70">{{trip.description.substring(0, 70)}}...</p>
+        <div class="info">
+          <p>{{trip.duration}} Dias</p>
+          <p>${{trip.price}}</p>
+        </div>
 
+        <ion-button (click)="goToTripDetail(trip.id)">Ver detalles</ion-button>
       </div>
-      <ion-button (click)="goToTripDetail(trip.id)"><ion-icon name="add-outline"></ion-icon></ion-button>
 
     </div>
   </div>
