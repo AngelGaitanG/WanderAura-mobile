@@ -10,4 +10,6 @@ export interface TripResponse {
     transport: any[];
     activities: any[];
     image: string;
+    start_date: string;
+    end_date: string;
 }

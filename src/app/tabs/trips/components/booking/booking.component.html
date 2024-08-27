@@ -1,0 +1,47 @@
+<div class="firstForm" *ngIf="!isSecondFormActived">
+    <h3>Resumen de la reserva</h3>
+    <h3>{{trip?.name}}</h3>
+    <div class="subhead">
+        <p>📅{{trip.duration}} Dias</p>
+        <p>🙍‍♀️{{people}} Viajeros</p>
+        <p>Fecha de Inicio: {{trip.start_date | timeFormat}}</p>
+    </div>
+    <h3>Numero de viajeros</h3>
+    <div class="buttons" style="display: flex;">
+        <ion-button (click)="decrementPeople()">-</ion-button>
+        <p>{{people}}</p>
+        <ion-button (click)="incrementPeople()">+</ion-button>
+    </div>
+    <h3>Resumen de costos</h3>
+    <p>Precio base ({{people}} x ${{trip.price}})</p>
+    <div class="total" style="display: flex; justify-content: space-between">
+        <h3>Total</h3>
+        <h3>${{trip.price * people}}</h3>
+    </div>
+    <ion-button (click)="continueToSecondForm()">Continuar con la Reserva</ion-button>
+</div>
+<div class="secondForm">
+    <form *ngIf="isSecondFormActived && people > 0" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <ng-container *ngFor="let i of [].constructor(people); let idx = index;">
+            <h3>Persona {{idx + 1}}</h3>
+            <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input type="text" formControlName="name{{idx}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Apellido</ion-label>
+                <ion-input type="text" formControlName="lastName{{idx}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email" formControlName="email{{idx}}"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="idx !== people - 1">
+                <ion-button type="submit" expand="block" color="primary">Continuar</ion-button>
+            </ion-item>
+            <ion-item *ngIf="idx === people - 1">
+                <ion-button type="submit" expand="block" color="success">Pagar</ion-button>
+            </ion-item>
+        </ng-container>
+    </form>
+</div>

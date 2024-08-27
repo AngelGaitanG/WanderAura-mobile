@@ -1,10 +1,14 @@
 <ion-content>
-  <div class="trip">
+  <div class="trip" *ngIf="!booking">
     <img [src]="trip?.image" />
     <div class="header">
       <h4>{{ trip?.name }}</h4>
+      <div class="subhead">
+        <p>📅{{ trip?.duration }} días</p>
+        <p>💵${{ trip?.price }}</p>
+        <p>⭐{{ trip?.destination?.name }}<span>10 / 10</span></p>
+      </div>
       <p>{{ trip?.description }}</p>
-      <p>{{ trip?.destination?.name }} San Luis <span>10/10</span></p>
 
     </div>
     <div class="content">
@@ -13,16 +17,13 @@
       <p>Transportation: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
           }}</span></p>
       <p>Activities: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
-      <p>Duración: {{ trip?.duration }} días</p>
-      <p>Price: {{ trip?.price }} ARS</p>
+
     </div>
     <div class="button">
-      <ion-button (click)="createPayment(trip.id)" *ngIf="!successPayment">Reservar</ion-button>
-      <div *ngIf="successPayment">
-        <p>Gracias por tu reserva</p>
-        <ion-icon name="checkmark-outline"></ion-icon>
-      </div>
+      <ion-button (click)="isBooking()">Reservar</ion-button>
     </div>
   </div>
-  <app-trip-posts></app-trip-posts>
+
+  <app-trip-posts *ngIf="!booking"></app-trip-posts>
+  <app-booking *ngIf="booking" [trip]="trip"></app-booking>
 </ion-content>
