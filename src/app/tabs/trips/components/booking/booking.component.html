@@ -1,4 +1,4 @@
-<div class="firstForm" *ngIf="!isSecondFormActived">
+<div class="firstForm" *ngIf="!isSecondFormActived && !isThirdFormActived">
     <h3>Resumen de la reserva</h3>
     <h3>{{trip?.name}}</h3>
     <div class="subhead">
@@ -20,28 +20,69 @@
     </div>
     <ion-button (click)="continueToSecondForm()">Continuar con la Reserva</ion-button>
 </div>
-<div class="secondForm">
-    <form *ngIf="isSecondFormActived && people > 0" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <ng-container *ngFor="let i of [].constructor(people); let idx = index;">
-            <h3>Persona {{idx + 1}}</h3>
+<div class="secondForm" *ngIf="isSecondFormActived">
+    <h3 style=" color: rgba(0, 0, 0, 0.7);">Informacion del Viajero</h3>
+    <p>Viajero {{actualTraveler}} de {{people}}</p>
+    <form [formGroup]="travelersForm">
+        <div>
+            <ion-input type="text" fill="solid" label="Name" labelPlacement="floating" helperText="Enter your name"
+                errorText="Invalid name" formControlName="name"></ion-input>
+        </div>
+        <div>
+            <ion-input type="text" fill="solid" label="Lastname" labelPlacement="floating"
+                helperText="Enter your lastname" errorText="Invalid lastname" formControlName="lastname"></ion-input>
+        </div>
+        <div>
+            <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
+                helperText="Enter a valid email" errorText="Invalid email" formControlName="email"></ion-input>
+        </div>
+        <div>
+            <ion-input type="date" fill="solid" label="Fecha de Nacimiento" labelPlacement="floating"
+                helperText="Enter your birthdate" errorText="Invalid birthdate" formControlName="birthdate"></ion-input>
+        </div>
+        <div>
+            <ion-input type="number" fill="solid" label="Numero de Pasaporte" labelPlacement="floating"
+                helperText="Enter your passport number" errorText="Invalid passport number" maxlength="6"
+                formControlName="passportNumber"></ion-input>
+        </div>
+        <div>
+            <ion-input type="date" fill="solid" label="Vencimiento del Pasaporte" labelPlacement="floating"
+                helperText="Enter your passport expiration" errorText="Invalid date"
+                formControlName="passportExpiration"></ion-input>
+        </div>
+        <ion-button (click)="submitTravelersForm()" *ngIf="travelers.length < people - 1">Siguiente ></ion-button>
+        <ion-button *ngIf="travelers.length === people - 1" (click)="submitTravelersForm()"
+            (click)="submitToThirdForm()">Finalizar ></ion-button>
+    </form>
+</div>
+<div class="thirdForm" *ngIf="!isSecondFormActived && isThirdFormActived">
+    <h3>Forma de Pago</h3>
+    <form [formGroup]="paymentForm">
+
+        <ion-radio-group formControlName="paymentMethod" value="Mercado Pago">
             <ion-item>
-                <ion-label position="floating">Nombre</ion-label>
-                <ion-input type="text" formControlName="name{{idx}}"></ion-input>
+                <ion-label>Mercado Pago</ion-label>
+                <ion-radio slot="start" value="Mercado Pago"></ion-radio>
             </ion-item>
+
             <ion-item>
-                <ion-label position="floating">Apellido</ion-label>
-                <ion-input type="text" formControlName="lastName{{idx}}"></ion-input>
+                <ion-label>Paypal</ion-label>
+                <ion-radio slot="start" value="Paypal"></ion-radio>
             </ion-item>
+
             <ion-item>
-                <ion-label position="floating">Email</ion-label>
-                <ion-input type="email" formControlName="email{{idx}}"></ion-input>
+                <ion-label>Transferencia</ion-label>
+                <ion-radio slot="start" value="Transferencia"></ion-radio>
             </ion-item>
-            <ion-item *ngIf="idx !== people - 1">
-                <ion-button type="submit" expand="block" color="primary">Continuar</ion-button>
-            </ion-item>
-            <ion-item *ngIf="idx === people - 1">
-                <ion-button type="submit" expand="block" color="success">Pagar</ion-button>
-            </ion-item>
-        </ng-container>
+        </ion-radio-group>
+        <div class="message" *ngIf="paymentForm.value.paymentMethod !== ''">
+            Seras redirigido a {{paymentForm.value.paymentMethod}} para completar tu pago de forma segura.
+        </div>
+        <div class="message" *ngIf="paymentForm.value.paymentMethod === ''">Selecciona una forma de pago
+
+        </div>
+
+
+        <ion-button (click)="submitPayment()">ola</ion-button>
     </form>
 </div>
