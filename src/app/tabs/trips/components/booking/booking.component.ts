@@ -3,6 +3,7 @@ import { TimeFormatPipe } from "src/app/commons/pipes/time.pipe";
 import { IonButton, IonItem, IonInput, IonLabel, IonRadioGroup, IonRadio } from "@ionic/angular/standalone";
 import { CommonModule } from "@angular/common";
 import { FormControl, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from "@angular/forms";
+import { PaymentService } from "src/app/core/services/payment.service";
 
 @Component({
     selector: 'app-booking',
@@ -21,6 +22,12 @@ export class BookingComponent {
     travelers: any[] = [];
     actualTraveler: number = 1;
     bodyPaymentRequest: any;
+    bookinPayed: boolean = false;
+    bookingData: any;
+
+    constructor(
+        private paymentService: PaymentService
+    ){}
 
     paymentForm = new FormGroup({
         paymentMethod: new FormControl('', [Validators.required]),
@@ -77,6 +84,16 @@ export class BookingComponent {
             currency: "USD",
         }
 
-        console.log(this.bodyPaymentRequest);
+        this.paymentService.simplePayment(this.bodyPaymentRequest).subscribe({
+            next: (response) => {
+                this.bookingData = response
+                this.bookinPayed = true;
+                this.isSecondFormActived = false;
+                this.isThirdFormActived = false;
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        });
     }
 }

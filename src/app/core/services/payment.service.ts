@@ -11,8 +11,8 @@ export class PaymentService {
   constructor(private http: HttpClient) { }
 
 
-  simplePayment(tripId: string):Observable<object> {
-    const body = {tripId: tripId};
+  simplePayment(body: any):Observable<object> {
+   
     return this.http.post<object>(`${environment.wanderAuraApi}payments/simple`, body, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('authToken')

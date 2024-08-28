@@ -86,3 +86,38 @@
         <ion-button (click)="submitPayment()">ola</ion-button>
     </form>
 </div>
+<div class="succesPayment" *ngIf="bookinPayed">
+    <h3>Reserva confirmada!</h3>
+    <p>Tu aventura está a punto de comenzar</p>
+    <div class="details">
+        <h4>Detalles de la reserva</h4>
+        <div class="point">
+            <p>Numero de la Reserva</p>
+            <p>{{bookingData.bookingId}}</p>
+        </div>
+        <div class="point">
+            <p>Viaje</p>
+            <p>{{trip.name}}</p>
+        </div>
+        <div class="point">
+            <p>Fecha de Inicio</p>
+            <p>📅{{trip.start_date}}</p>
+        </div>
+        <div class="point">
+            <p>Fecha de Fin</p>
+            <p>📅{{trip.end_date}}</p>
+        </div>
+        <div class="point">
+            <p>Viajeros</p>
+            <p>👩🏿‍🤝‍🧑🏽{{people}}</p>
+        </div>
+        <div class="point">
+            <p>Costo de la Reserva</p>
+            <p>💳{{bookingData.totalPrice}}</p>
+        </div>
+        <div class="point">
+            <p>Precio Total</p>
+            <p>${{totalPrice}}</p>
+        </div>
+    </div>
+</div>
