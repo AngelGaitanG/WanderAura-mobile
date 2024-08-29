@@ -19,4 +19,11 @@ export class TripsService {
     return this.http.get<TripResponse>(`${environment.wanderAuraApi}trips/${id}`, );
   }
 
+  getUserTrips():Observable<any> {
+    return this.http.get<any>(`${environment.wanderAuraApi}bookings/my-trips`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+      }
+    });
+  }
 }

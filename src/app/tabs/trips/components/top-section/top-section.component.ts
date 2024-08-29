@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonButton } from '@ionic/angular/standalone';
 
 @Component({
@@ -10,7 +11,11 @@ import { IonButton } from '@ionic/angular/standalone';
 })
 export class TopSectionComponent {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
+  goToMyTrips() {
+    this.route.navigate(['tabs/trips/my-trips'])
+
+  }
 
 }

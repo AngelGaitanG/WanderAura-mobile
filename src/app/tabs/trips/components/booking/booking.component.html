@@ -1,4 +1,4 @@
-<div class="firstForm" *ngIf="!isSecondFormActived && !isThirdFormActived">
+<div class="firstForm" *ngIf="!isSecondFormActived && !isThirdFormActived && !bookinPayed">
     <h3>Resumen de la reserva</h3>
     <h3>{{trip?.name}}</h3>
     <div class="subhead">
@@ -101,11 +101,11 @@
         </div>
         <div class="point">
             <p>Fecha de Inicio</p>
-            <p>📅{{trip.start_date}}</p>
+            <p>📅{{trip.start_date | timeFormat}}</p>
         </div>
         <div class="point">
             <p>Fecha de Fin</p>
-            <p>📅{{trip.end_date}}</p>
+            <p>📅{{trip.end_date | timeFormat}}</p>
         </div>
         <div class="point">
             <p>Viajeros</p>
