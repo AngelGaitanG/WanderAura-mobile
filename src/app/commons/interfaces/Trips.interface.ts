@@ -13,3 +13,9 @@ export interface TripResponse {
     start_date: string;
     end_date: string;
 }
+
+export interface MyTripResponse {
+    currentTrip?: TripResponse & {bookingId: string, currentDay: number, totalDays: number, status: string};
+    pastTrips?: (TripResponse & {bookingId: string, status: string})[];
+    upcomingTrips?: (TripResponse & {bookingId: string, status: string})[];
+}

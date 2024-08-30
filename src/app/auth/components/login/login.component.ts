@@ -41,6 +41,9 @@ export class LoginComponent  {
             localStorage.setItem('authToken', res.access_token)
             this.router.navigate(['/tabs/home']);
             this.isLoading = false;
+            setTimeout(() => {
+              this.authService.logout();
+            }, 10800000);
           } else {
             console.error('Autenticación fallida');
           }

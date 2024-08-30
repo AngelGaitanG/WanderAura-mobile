@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>my-trips</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">my-trips</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h3>Mis Viajes</h3>
+  <div class="currentTrip" *ngIf="trips.currentTrip !== null">
+    <h3>Viaje Actual</h3>
+    <ion-img [src]=""></ion-img>
+    <div class="content">
+      <h3>Nombre del viaje</h3>
+      <p>Lugar</p>
+      <p>Start - End</p>
+      <div class="progress">
+        <p>Progreso del viaje</p>
+        <div class="bar">
+          <span class="intBar"></span>
+        </div>
+        Dia tal de tantos
+      </div>
+    </div>
+    <ion-button>
+      Ver Detalles del Viaje
+    </ion-button>
+  </div>
+
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button routerLink="my-trips/all-trips">
+        <ion-label>Todos los viajes</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="my-trips/upcoming-trips">
+        <ion-label>Próximos viajes</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLink="my-trips/past-trips">
+        <ion-label>Historial de viajes</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+
+    <ion-router-outlet></ion-router-outlet>
+  </ion-tabs>
 </ion-content>

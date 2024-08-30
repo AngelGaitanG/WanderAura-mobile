@@ -1,0 +1,11 @@
+div.tabs-inner {
+    display: none;
+}
+
+div.tabs-inner::after {
+    display: none;
+}
+
+div.tabs-inner::before {
+    display: none;
+}
