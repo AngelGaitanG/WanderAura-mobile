@@ -1,20 +1,23 @@
-<ion-card *ngFor="let trip of trips">
-    <img src="{{ trip.image }}">
-    <ion-card-header>
-        <ion-card-title>{{ trip.name }}</ion-card-title>
-        <ion-card-subtitle>
-            <ion-icon name="location-outline"></ion-icon>
-            Algun lugar misterioso
-        </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-        <p>
-            <ion-icon name="calendar-outline"></ion-icon>
-            {{ trip.start_date | date:'shortDate' }} - {{ trip.end_date | date:'shortDate' }}
-        </p>
-        <ion-chip>{{ trip.status }}</ion-chip>
-    </ion-card-content>
-    <ion-button expand="block">
-        Ver detalles
-    </ion-button>
-</ion-card>
+<div class="container" *ngIf="trips.length > 0">
+
+    <ion-card *ngFor="let trip of trips">
+        <img src="{{ trip.image }}">
+        <ion-card-header>
+            <ion-card-title>{{ trip.name }}</ion-card-title>
+            <ion-card-subtitle>
+                <ion-icon name="location-outline"></ion-icon>
+                Algun lugar misterioso
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                <ion-icon name="calendar-outline"></ion-icon>
+                {{ trip.start_date | date:'shortDate' }} - {{ trip.end_date | date:'shortDate' }}
+            </p>
+            <ion-chip>{{ trip.status }}</ion-chip>
+        </ion-card-content>
+        <ion-button center>
+            Ver detalles
+        </ion-button>
+    </ion-card>
+</div>

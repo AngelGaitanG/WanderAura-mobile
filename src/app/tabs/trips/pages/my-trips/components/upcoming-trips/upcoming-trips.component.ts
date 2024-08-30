@@ -11,7 +11,7 @@ import { CommonModule } from "@angular/common";
     imports: [IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, CommonModule],
 })
 export class UpcomingTripsComponent implements OnInit {
-    trips: any = {};
+    trips: any = [];
 
     constructor(
         private tripsService: TripsService

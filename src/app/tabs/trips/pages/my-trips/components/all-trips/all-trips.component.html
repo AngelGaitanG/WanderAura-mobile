@@ -1,20 +1,60 @@
-<ion-card *ngFor="let trip of trips">
-    <img src="{{ trip.image }}">
-    <ion-card-header>
-        <ion-card-title>{{ trip.name }}</ion-card-title>
-        <ion-card-subtitle>
-            <ion-icon name="location-outline"></ion-icon>
-            Algun lugar misterioso
-        </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-        <p>
-            <ion-icon name="calendar-outline"></ion-icon>
-            {{ trip.start_date | date:'shortDate' }} - {{ trip.end_date | date:'shortDate' }}
-        </p>
-        <ion-chip>{{ trip.status }}</ion-chip>
-    </ion-card-content>
-    <ion-button expand="block">
-        Ver detalles
-    </ion-button>
-</ion-card>
+<div class="container" *ngIf="trips.length > 0">
+    <ion-title>Mis Viajes</ion-title>
+    <div class="currentTrip" *ngIf="currentTrip !== null">
+        <ion-card class="current-trip-card">
+            <div class="image-container">
+                <img [src]="currentTrip.image" [alt]="currentTrip.name">
+                <div class="overlay">
+                    <h2>Viaje Actual</h2>
+                </div>
+            </div>
+            <ion-card-header>
+                <ion-card-title>{{ currentTrip.name }}</ion-card-title>
+                <ion-card-subtitle>
+                    <ion-icon name="location-outline"></ion-icon>
+                    {{ currentTrip.location }}
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <p>
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    {{ currentTrip.startDate | date:'shortDate' }} - {{ currentTrip.endDate |
+                    date:'shortDate' }}
+                </p>
+                <div class="progress-container">
+                    <ion-progress-bar [value]="progressPercentage / 100"></ion-progress-bar>
+                    <p class="progress-text">
+                        Día {{ currentTrip.currentDay }} de {{ currentTrip.totalDays }}
+                    </p>
+                </div>
+                <p class="remaining-days">
+                    {{ remainingDays }} días restantes
+                </p>
+            </ion-card-content>
+            <ion-button expand="block" color="primary">
+                Ver Detalles del Viaje
+            </ion-button>
+        </ion-card>
+    </div>
+
+    <ion-card *ngFor="let trip of trips">
+        <img src="{{ trip.image }}">
+        <ion-card-header>
+            <ion-card-title>{{ trip.name }}</ion-card-title>
+            <ion-card-subtitle>
+                <ion-icon name="location-outline"></ion-icon>
+                Algun lugar misterioso
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                <ion-icon name="calendar-outline"></ion-icon>
+                {{ trip.start_date | date:'shortDate' }} - {{ trip.end_date | date:'shortDate' }}
+            </p>
+            <ion-chip>{{ trip.status }}</ion-chip>
+        </ion-card-content>
+        <ion-button center>
+            Ver detalles
+        </ion-button>
+    </ion-card>
+</div>

@@ -12,7 +12,7 @@ import { CommonModule } from "@angular/common";
 })
 export class PastTripsComponent implements OnInit{
     
-    trips: any = {};
+    trips: any = [];
 
     constructor(
         private tripsService: TripsService
