@@ -24,7 +24,6 @@ export class HomePage implements OnInit{
   cards = [
     { title: 'Trips', img: '../../assets/backgrounds/flowers.jpg', routerLink: 'trips' },
     { title: 'Activities', img: '../../assets/backgrounds/country.jpg', routerLink: 'activities' },
-    { title: 'Tour Guides', img: '../../assets/backgrounds/autumn.jpg', routerLink: 'tour-guides' }
   ];
 
   @ViewChild(IonContent) content!: IonContent;
