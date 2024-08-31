@@ -9,3 +9,7 @@ div.tabs-inner::after {
 div.tabs-inner::before {
     display: none;
 }
+
+.active {
+    border-bottom: 2px solid #f76e4f;
+}
