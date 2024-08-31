@@ -5,7 +5,7 @@ export const TABS_ROUTES: Routes = [
     {
         path: 'home',
         loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-        canActivate: [AuthGuard],
+        
     },
     {
         path: 'profile',
@@ -23,6 +23,11 @@ export const TABS_ROUTES: Routes = [
         path: 'trips/my-trips',
         loadComponent: () => import('./trips/pages/my-trips/my-trips.page').then((m) => m.MyTripsPage),
         loadChildren: () => import('./trips/trips.routes').then(m => m.TRIPS_ROUTES),
+        canActivate: [AuthGuard],
+    },
+    {
+        path: 'trips/no-booking/:trip',
+        loadComponent: () => import('./trips/pages/trip-detail-nobooking/trip-detail-nobooking.page').then((m) => m.TripDetailNobookingPage),
         canActivate: [AuthGuard],
     },
     {

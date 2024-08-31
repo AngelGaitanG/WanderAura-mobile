@@ -6,17 +6,17 @@
       <div class="subhead">
         <p>📅{{ trip?.duration }} días</p>
         <p>💵${{ trip?.price }}</p>
-        <p>⭐{{ trip?.destination?.name }}<span>10 / 10</span></p>
+        <p>⭐{{ trip?.destination?.name }} <span>10 / 10</span></p>
       </div>
       <p>{{ trip?.description }}</p>
 
     </div>
     <div class="content">
-      <p>Destination: {{ trip?.destination?.name }}</p>
-      <p>Accommodation: {{ trip?.accommodation }}</p>
-      <p>Transportation: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
+      <p>Destino: {{ trip?.destination?.name }}</p>
+      <p>Hospedaje: <span *ngFor="let accommodation of trip?.accommodations">{{ accommodation?.name }}, </span></p>
+      <p>Transporte: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
           }}</span></p>
-      <p>Activities: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
+      <p>Actividades: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
 
     </div>
     <div class="button">
@@ -24,6 +24,6 @@
     </div>
   </div>
 
-  <app-trip-posts *ngIf="!booking"></app-trip-posts>
+  <app-trip-posts *ngIf="!booking" [posts]="trip.posts"></app-trip-posts>
   <app-booking *ngIf="booking" [trip]="trip"></app-booking>
 </ion-content>

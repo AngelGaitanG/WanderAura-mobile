@@ -12,15 +12,13 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [ IonicModule, CommonModule, BottomSectionComponent, RouterLink]
 })
-export class HomePage implements OnInit{
+export class HomePage{
   constructor(
     private authService: AuthService, private router: Router
   ) {}
-  isAuthenticated = false;
+  isAuthenticated = true;
 
-  ngOnInit(): void {
-    this.isAuthenticated = this.authService.isAutenticated();
-  }
+
   cards = [
     { title: 'Trips', img: '../../assets/backgrounds/flowers.jpg', routerLink: 'trips' },
     { title: 'Activities', img: '../../assets/backgrounds/country.jpg', routerLink: 'activities' },

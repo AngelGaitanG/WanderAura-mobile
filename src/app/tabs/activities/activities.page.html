@@ -1,15 +1,33 @@
 <ion-content [fullscreen]="true">
-  <ion-title>Activities</ion-title>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Actividades</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <div class="activities-container">
-    <div class="activity-card" *ngFor="let activity of activities; let i = index">
-      <img [src]="activityImages[i]" alt="activity image">
-      <div class="content">
-        <h4>{{activity.name}}</h4>
+    <ion-card *ngFor="let activity of activities" class="activity-card">
+      <img [src]="activity.image" alt="Imagen de {{activity.name}}">
+      <ion-card-header>
+        <ion-card-title>{{activity.name}}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-icon name="location-outline"></ion-icon> {{activity.ubication}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
         <p>{{activity.description}}</p>
-      </div>
-      <ion-button color="secondary">
-        <ion-icon name="add" style="width: 3em;"></ion-icon>
-      </ion-button>
-    </div>
+        <div class="activity-details">
+          <ion-chip>
+            <ion-icon name="time-outline"></ion-icon>
+            <ion-label>{{activity.duration}} horas</ion-label>
+          </ion-chip>
+          <ion-chip color="success">
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label>${{activity.price}}</ion-label>
+          </ion-chip>
+        </div>
+      </ion-card-content>
+
+    </ion-card>
   </div>
 </ion-content>

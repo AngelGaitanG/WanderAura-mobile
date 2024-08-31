@@ -33,27 +33,28 @@ export class LoginComponent  {
   
   onSubmit(form: NgForm) {
     if (form.valid) {
-      const loginForm: ILoginForm = form.value;
-      this.isLoading = true;
-      this.authService.loginUser(loginForm.email, loginForm.password).subscribe({
-        next: (res: LoginUserResponse) => {
-          if (res.success) {
-            localStorage.setItem('authToken', res.access_token)
-            this.router.navigate(['/tabs/home']);
-            this.isLoading = false;
-            setTimeout(() => {
-              this.authService.logout();
-            }, 10800000);
-          } else {
-            console.error('Autenticación fallida');
-          }
-        },
-        error: (err) => {
-          if(err){
-            this.invalidCredentials = true;
-          }
-        }
-      });
+      this.router.navigate(['/tabs/home']); // MOCK
+      // const loginForm: ILoginForm = form.value;
+      // this.isLoading = true;
+      // this.authService.loginUser(loginForm.email, loginForm.password).subscribe({
+      //   next: (res: LoginUserResponse) => {
+      //     if (res.success) {
+      //       localStorage.setItem('authToken', res.access_token)
+      //       this.router.navigate(['/tabs/home']);
+      //       this.isLoading = false;
+      //       setTimeout(() => {
+      //         this.authService.logout();
+      //       }, 10800000);
+      //     } else {
+      //       console.error('Autenticación fallida');
+      //     }
+      //   },
+      //   error: (err) => {
+      //     if(err){
+      //       this.invalidCredentials = true;
+      //     }
+      //   }
+      // });
       
     } 
   }

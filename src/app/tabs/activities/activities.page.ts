@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButton } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButton, IonLabel, IonChip, IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard } from '@ionic/angular/standalone';
 import { IActivity } from 'src/app/commons/interfaces/Activities.interface';
 import { ActivityService } from 'src/app/core/services/activity.service';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
+import { ACTIVITIES } from 'src/app/core/mocks/activities-mocks';
+
 
 @Component({
   selector: 'app-activities',
   templateUrl: './activities.page.html',
   styleUrls: ['./activities.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButton, CommonModule, FormsModule]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonButton, CommonModule, FormsModule, IonLabel, IonChip, IonCardContent, IonCardTitle, IonCardSubtitle, IonCardHeader, IonCard]
 })
 export class ActivitiesPage implements OnInit{
 
@@ -35,14 +37,16 @@ export class ActivitiesPage implements OnInit{
 
   
   ngOnInit(): void {
-    this.activityService.getDestinations().subscribe({
-      next: (res) => {
-        this.activities = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
+    this.activities = ACTIVITIES; // ESTE ES UN MOCK
+
+    // this.activityService.getDestinations().subscribe({
+    //   next: (res) => {
+    //     this.activities = res;
+    //   },
+    //   error: (err) => {
+    //     console.error(err);
+    //   }
+    // });
   }
 
  

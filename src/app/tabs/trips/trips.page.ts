@@ -8,6 +8,7 @@ import { MiddleSectionComponent } from './components/middle-section/middle-secti
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
 import { TripsService } from 'src/app/core/services/trips.service';
 import { TripResponse } from 'src/app/commons/interfaces/Trips.interface';
+import { TRIPS } from 'src/app/core/mocks/trips-mocks';
 
 @Component({
   selector: 'app-trips',
@@ -21,14 +22,16 @@ export class TripsPage implements OnInit {
   constructor(private tripsService: TripsService) { }
 
   ngOnInit(): void {
-    this.tripsService.getTrips().subscribe({
-      next: (res) => {
-        this.trips = res;
-      },
-      error(err) {
-        console.error(err);
-      }
-    });
+    this.trips = TRIPS; // ESTE ES EL MOCK DE TRIPS
+    
+    // this.tripsService.getTrips().subscribe({
+    //   next: (res) => {
+    //     this.trips = res;
+    //   },
+    //   error(err) {
+    //     console.error(err);
+    //   }
+    // });
   }
 
 }

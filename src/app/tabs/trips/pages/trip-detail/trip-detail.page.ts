@@ -8,6 +8,8 @@ import { TripResponse } from 'src/app/commons/interfaces/Trips.interface';
 import { PaymentService } from 'src/app/core/services/payment.service';
 import { TripPostsComponent } from '../../components/trip-posts/trip-posts';
 import { BookingComponent } from '../../components/booking/booking.component';
+import { TRIPS } from 'src/app/core/mocks/trips-mocks';
+
 
 @Component({
   selector: 'app-trip-detail',
@@ -27,18 +29,29 @@ export class TripDetailPage implements OnInit {
   ) {
   }
 
+  getTrip(id: string){
+    TRIPS.forEach(trip => {
+      if(trip.id === id){
+        this.trip = trip;
+      }
+    })
+  }
+
   ngOnInit() {
-    this.tripId = this.route.snapshot.paramMap.get('trip');
-    if(this.tripId !== null) {
-      this.tripsService.getTrip(this.tripId).subscribe({
-        next: (res) => {
-          this.trip = res;
-        },
-        error: (err) => {
-          console.error(err);
-        },
-      });
-    }
+    const tripId = this.route.snapshot.paramMap.get('trip');
+  if (tripId !== null) {
+    this.getTrip(tripId);
+  }
+    // if(this.tripId !== null) {
+    //   this.tripsService.getTrip(this.tripId).subscribe({
+    //     next: (res) => {
+    //       this.trip = res;
+    //     },
+    //     error: (err) => {
+    //       console.error(err);
+    //     },
+    //   });
+    // }
   }
 
   createPayment(tripId: string) {

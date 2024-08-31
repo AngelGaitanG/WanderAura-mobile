@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TripsService } from "src/app/core/services/trips.service";
-import { IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent } from "@ionic/angular/standalone"
+import { IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, IonContent } from "@ionic/angular/standalone"
 import { CommonModule } from "@angular/common";
 
 @Component({
@@ -8,7 +8,7 @@ import { CommonModule } from "@angular/common";
     templateUrl: './upcoming-trips.component.html',
     styleUrls: ['./upcoming-trips.component.scss'],
     standalone: true,
-    imports: [IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, CommonModule],
+    imports: [IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, CommonModule, IonContent],
 })
 export class UpcomingTripsComponent implements OnInit {
     trips: any = [];

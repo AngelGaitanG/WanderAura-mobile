@@ -1,3 +1,21 @@
+:host {
+    inset: 0px;
+    /* position: absolute; */
+    /* contain: size layout style; */
+    z-index: 0;
+}
+
+.container {
+    height: 100%;
+    /* Asegura que ocupe todo el espacio disponible */
+    overflow-y: auto;
+    /* Permite el scroll vertical */
+    padding: 10px;
+    /* Añade un poco de espacio alrededor del contenido */
+    box-sizing: border-box;
+}
+
+
 ion-card {
     margin: 10px;
 }

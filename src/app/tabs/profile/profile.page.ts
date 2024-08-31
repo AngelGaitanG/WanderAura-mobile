@@ -5,6 +5,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 import { TopSectionComponent } from './components/top-section/top-section.component';
 import { BottomSectionComponent } from './components/bottom-section/bottom-section.component';
 import { WanderApiService } from 'src/app/core/services/wander-api.service';
+import { USER } from 'src/app/core/mocks/user-mock';
 
 @Component({
   selector: 'app-profile',
@@ -21,15 +22,16 @@ export class ProfilePage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.charging = true;
-   this.wanderApiService.getProfile().subscribe({
-     next: (res) => {
-       this.info = res;
-     },
-     error: (err) => console.error(err),
-     complete: () => {
-      this.charging = false;
-     }   })
+    this.info = USER;
+  //   this.charging = true;
+  //  this.wanderApiService.getProfile().subscribe({
+  //    next: (res) => {
+  //      this.info = res;
+  //    },
+  //    error: (err) => console.error(err),
+  //    complete: () => {
+  //     this.charging = false;
+  //    }   })
   }
 
 }

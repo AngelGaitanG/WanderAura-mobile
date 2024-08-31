@@ -83,17 +83,24 @@ export class BookingComponent {
             totalPrice: this.totalPrice,
             currency: "USD",
         }
-
-        this.paymentService.simplePayment(this.bodyPaymentRequest).subscribe({
-            next: (response) => {
-                this.bookingData = response
+        this.bookingData = {
+           totalPrice: this.trip.price,
+           id: "324-M"
+        }
                 this.bookinPayed = true;
                 this.isSecondFormActived = false;
                 this.isThirdFormActived = false;
-            },
-            error: (error) => {
-                console.log(error);
-            }
-        });
+
+        // this.paymentService.simplePayment(this.bodyPaymentRequest).subscribe({
+        //     next: (response) => {
+        //         this.bookingData = response
+        //         this.bookinPayed = true;
+        //         this.isSecondFormActived = false;
+        //         this.isThirdFormActived = false;
+        //     },
+        //     error: (error) => {
+        //         console.log(error);
+        //     }
+        // });
     }
 }

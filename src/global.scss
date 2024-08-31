@@ -38,6 +38,17 @@
 
 // IONIC DIFFERENT COLORS
 
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+
+
 :root {
     --ion-color-primary: #56bee4;
     --ion-color-primary-rgb: 86, 190, 228;
@@ -119,6 +130,9 @@ body {
 
 ion-button {
     --color: white;
+    --background: linear-gradient(165deg, #f76e4fc8, #263256c8);
+    --border-radius: 20px;
+    --box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.8);
 }
 
 ion-title {

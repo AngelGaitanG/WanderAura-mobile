@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarouselComponent } from 'src/app/commons/components/carousel/carousel.component';
 import { IonButton, IonIcon } from '@ionic/angular/standalone';
 import { DestinationService } from 'src/app/core/services/destination.service';
+import { DESTINATIONS } from 'src/app/core/mocks/destination-mocks';
 
 @Component({
   selector: 'app-bottom-section',
@@ -19,14 +20,15 @@ export class BottomSectionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.destinationService.getDestinations().subscribe({
-      next: (res) => {
-        this.carouselItems = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    })
+    this.carouselItems = DESTINATIONS;
+    // this.destinationService.getDestinations().subscribe({
+    //   next: (res) => {
+    //     this.carouselItems = res;
+    //   },
+    //   error: (err) => {
+    //     console.error(err);
+    //   }
+    // })
   }
 
 

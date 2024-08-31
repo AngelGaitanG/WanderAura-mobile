@@ -1,14 +1,15 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { TripsService } from "src/app/core/services/trips.service";
-import { IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, IonImg, IonProgressBar, IonTitle } from "@ionic/angular/standalone"
+import { IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, IonImg, IonProgressBar, IonTitle, IonContent } from "@ionic/angular/standalone"
 import { CommonModule } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-all-trips',
     templateUrl: './all-trips.component.html',
     styleUrls: ['./all-trips.component.scss'],
     standalone: true,
-    imports: [IonCard,IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, CommonModule, IonImg, IonProgressBar, IonTitle],
+    imports: [IonCard,IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent, CommonModule, IonImg, IonProgressBar, IonTitle, IonContent ],
 })
 export class AllTripsComponent implements OnInit{ 
     trips: any = [];
@@ -16,8 +17,12 @@ export class AllTripsComponent implements OnInit{
     currentTrip: any = {};
     
     constructor(
-        private tripsService: TripsService
+        private tripsService: TripsService, private router: Router
     ){}
+
+    goToTripDetail(id: string) {
+        this.router.navigate(['tabs/trips/no-booking', id])
+      }
 
     get progressPercentage(): number {
         return (this.currentTrip.currentDay / this.currentTrip.totalDays) * 100;
