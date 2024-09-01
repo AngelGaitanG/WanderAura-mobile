@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonImg, IonToolbar, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCard, IonButton, IonIcon } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { TripsService } from 'src/app/core/services/trips.service';
+import { MY_TRIPS_MIXED } from 'src/app/core/mocks/my-trips-mocks';
 
 @Component({
   selector: 'app-trip-detail-nobooking',
@@ -20,16 +21,17 @@ export class TripDetailNobookingPage implements OnInit {
 
   ngOnInit() {
     this.tripId = this.route.snapshot.paramMap.get('trip');
-    if(this.tripId !== null) {
-      this.tripsService.getTrip(this.tripId).subscribe({
-        next: (res) => {
-          this.trip = res;
-        },
-        error: (err) => {
-          console.error(err);
-        },
-      });
-    }
+    this.trip = MY_TRIPS_MIXED.filter(trip => trip.id === this.tripId)[0];
+    // if(this.tripId !== null) {
+    //   this.tripsService.getTrip(this.tripId).subscribe({
+    //     next: (res) => {
+    //       this.trip = res;
+    //     },
+    //     error: (err) => {
+    //       console.error(err);
+    //     },
+    //   });
+    // }
   }
 
 }

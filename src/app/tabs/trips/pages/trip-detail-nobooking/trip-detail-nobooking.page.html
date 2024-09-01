@@ -12,11 +12,11 @@
 
     </div>
     <div class="content">
-      <p>Destination: {{ trip?.destination?.name }}</p>
-      <p>Accommodation: {{ trip?.accommodation }}</p>
-      <p>Transportation: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
-          }}</span></p>
-      <p>Activities: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
+      <p>Destino: {{ trip?.destination?.name }}</p>
+      <p>Hospedaje: {{ trip?.accommodation }}</p>
+      <p>Transporte: <span *ngFor="let transportation of trip?.transport">{{ transportation.type | uppercase
+          }}, </span></p>
+      <p>Actividades: <span *ngFor="let activity of trip?.activities">{{ activity.name }}, </span></p>
 
     </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { TripsService } from "src/app/core/services/trips.service";
 import { IonCard, IonButton, IonCardHeader, IonCardTitle, IonCardSubtitle, IonIcon, IonChip, IonCardContent } from "@ionic/angular/standalone"
 import { CommonModule } from "@angular/common";
+import { MY_TRIPS } from "src/app/core/mocks/my-trips-mocks";
 
 @Component({
     selector: 'app-past-trips',
@@ -18,12 +19,13 @@ export class PastTripsComponent implements OnInit{
         private tripsService: TripsService
     ){}
     ngOnInit(): void {
-        this.trips = this.tripsService.getUserTrips().subscribe({
-            next: (res) => {
-                this.trips = res.pastTrips;
-                console.log(this.trips);
-            },
-            error: (err) => console.error(err)
-        });
+        this.trips = MY_TRIPS.pastTrips;//MOCKS
+        // this.trips = this.tripsService.getUserTrips().subscribe({
+        //     next: (res) => {
+        //         this.trips = res.pastTrips;
+        //         console.log(this.trips);
+        //     },
+        //     error: (err) => console.error(err)
+        // });
     }
 }
